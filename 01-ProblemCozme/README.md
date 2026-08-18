@@ -53,9 +53,7 @@ Python/
 
 ## GitHub Pages
 
-Klasörü repository içine ekledikten sonra GitHub Pages etkinleştirilebilir.
-
-Genel adres yapısı:
+Aşağıdaki adresi kopyalayıp adres çubuğuna yapıştırınız.
 
 ```text
 https://bilsem-bt.github.io/ProgramlamayaGiris/01-ProblemCozme/
