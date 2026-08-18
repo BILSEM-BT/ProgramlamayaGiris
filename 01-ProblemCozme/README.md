@@ -60,7 +60,7 @@ Klasörü repository içine ekledikten sonra GitHub Pages etkinleştirilebilir.
 Genel adres yapısı:
 
 ```text
-[https://BILSEM-BT.github.io/REPOSITORY/ProgramlamayaGiris/01-ProblemCozme/](https://bilsem-bt.github.io/ProgramlamayaGiris/01-ProblemCozme/)
+https://BILSEM-BT.github.io/REPOSITORY/ProgramlamayaGiris/01-ProblemCozme/
 ```
 
 `index.html` giriş sayfası olarak açılır.
