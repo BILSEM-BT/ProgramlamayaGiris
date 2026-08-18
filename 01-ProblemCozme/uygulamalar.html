@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uygulamalar - Problem Çözme</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="sub-header">
+    <div class="container header-brand">
+      <img class="sub-logo" src="assets/nsb-logo.png" alt="Niyazi Sayın Bilim ve Sanat Merkezi logosu">
+      <div>
+        <a class="back-link" href="index.html">Ders Ana Sayfası</a>
+        <p class="eyebrow light">Niyazi Sayın Bilim ve Sanat Merkezi</p>
+        <h1>Problem Çözme Uygulamaları</h1>
+        <p class="hero-text">Bilişim Teknolojileri Dersi - 24 Etkileşimli Soru</p>
+        <div class="identity-list">
+            <span><strong>Kurum:</strong> Niyazi Sayın Bilim ve Sanat Merkezi</span>
+            <span><strong>Ders:</strong> Bilişim Teknolojileri Dersi</span>
+            <span><strong>Öğretmen:</strong> Ersin ŞANLI</span>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="quiz-summary">
+      <div>
+        <p class="eyebrow">İlerleme</p>
+        <strong id="progressText">0 / 24 soru cevaplandı</strong>
+      </div>
+
+      <div class="score-box">
+        <span>Doğru</span>
+        <strong id="scoreText">0</strong>
+      </div>
+
+      <div class="score-box">
+        <span>Yanlış</span>
+        <strong id="wrongText">0</strong>
+      </div>
+
+      <button id="resetAllBtn" class="secondary-button" type="button">
+        Tümünü Sıfırla
+      </button>
+
+      <div class="progress-track full">
+        <div id="progressBar" class="progress-fill"></div>
+      </div>
+    </section>
+
+    <section class="quiz-info">
+      <h2>Nasıl çalışılır?</h2>
+      <p>
+        Her soruyu önce kendi düşüncenle çöz.
+        Cevabını kontrol ettikten sonra verilen açıklamayı mutlaka oku.
+        Sorular tek seçimli, çok seçimli ve sıralama türlerinden oluşur.
+      </p>
+    </section>
+
+    <div id="quizContainer"></div>
+
+    <section class="final-panel">
+      <h2>Genel Sonuç</h2>
+      <p id="finalMessage">
+        Bütün soruları tamamladığında burada genel değerlendirme görünecek.
+      </p>
+      <a class="button-link" href="konu-anlatimi.html">Konu Anlatımına Dön</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html">Ders Ana Sayfası</a>
+      <span>Bilişim Teknolojileri Dersi - Öğretmen: Ersin ŞANLI</span>
+    </div>
+  </footer>
+
+  <script src="assets/uygulamalar.js"></script>
+</body>
+</html>

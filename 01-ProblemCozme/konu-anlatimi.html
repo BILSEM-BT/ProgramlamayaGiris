@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Konu Anlatımı - Problem Çözme</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="sub-header">
+    <div class="container header-brand">
+      <img class="sub-logo" src="assets/nsb-logo.png" alt="Niyazi Sayın Bilim ve Sanat Merkezi logosu">
+      <div>
+        <a class="back-link" href="index.html">Ders Ana Sayfası</a>
+        <p class="eyebrow light">Niyazi Sayın Bilim ve Sanat Merkezi</p>
+        <h1>Problem Çözme</h1>
+        <p class="hero-text">Bilişim Teknolojileri Dersi - Problem Çözme Konu Anlatımı</p>
+        <div class="identity-list">
+            <span><strong>Kurum:</strong> Niyazi Sayın Bilim ve Sanat Merkezi</span>
+            <span><strong>Ders:</strong> Bilişim Teknolojileri Dersi</span>
+            <span><strong>Öğretmen:</strong> Ersin ŞANLI</span>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container lesson-layout">
+    <aside class="toc">
+      <strong>İçindekiler</strong>
+      <a href="#problem">1. Problem nedir?</a>
+      <a href="#problemi-yaz">2. Problemi yaz</a>
+      <a href="#problemi-anla">3. Problemi anla</a>
+      <a href="#surec">4. Problem çözme süreci</a>
+      <a href="#ipo">5. Girdi - işlem - çıktı</a>
+      <a href="#parcalama">6. Problemi parçalama</a>
+      <a href="#tumevarim">7. Tümevarım</a>
+      <a href="#tumdengelim">8. Tümdengelim</a>
+      <a href="#birlikte">9. İki yöntemi birlikte kullanmak</a>
+      <a href="#gereksiz">10. Gerekli / gereksiz bilgi</a>
+      <a href="#kosullar">11. Koşullar ve sınır değerler</a>
+      <a href="#cozum-yollari">12. Çözüm yolları üretmek</a>
+      <a href="#uygun-cozum">13. Uygun çözüm yolunu seçmek</a>
+      <a href="#algoritmaya-gecis">14. Algoritmaya geçiş</a>
+      <a href="#akis-semasina-gecis">15. Akış şemasına geçiş</a>
+      <a href="#dogrulama">16. Çözümü doğrulama</a>
+      <a href="#ornekler">17. Baştan sona örnek</a>
+      <a href="#hatalar">18. Yaygın hatalar</a>
+      <a href="#kontrol">19. Kontrol listesi</a>
+      <a href="#kavram-notu">20. Kavram notu</a>
+    </aside>
+
+    <article class="lesson-content">
+
+      <section id="problem" class="lesson-block">
+        <p class="eyebrow">1. Temel Kavram</p>
+        <h2>Problem nedir?</h2>
+
+        <p>
+          Problem, mevcut durum ile ulaşılmak istenen sonuç arasında çözülmesi gereken bir durumdur.
+          Programlamada problem; bir hesaplama yapmak, bir kararı vermek, verileri sıralamak,
+          bir bilgiye ulaşmak veya belirli kurallara göre bir sonuç üretmek biçiminde karşımıza çıkabilir.
+        </p>
+
+        <div class="example-box">
+          <strong>Örnek problem:</strong>
+          <p>
+            Bir öğrencinin üç sınav notu veriliyor.
+            Bu öğrencinin not ortalamasını hesaplamak istiyoruz.
+          </p>
+          <p>
+            Burada elimizde üç not vardır ve ulaşmak istediğimiz sonuç ortalama değeridir.
+          </p>
+        </div>
+      </section>
+
+      <section id="problemi-yaz" class="lesson-block">
+        <p class="eyebrow">2. Problemi Yaz</p>
+        <h2>Problemi önce açık bir cümle haline getir</h2>
+
+        <p>
+          Problem çözmede ilk önemli alışkanlıklardan biri problemi yazmaktır.
+          Problem yalnızca zihinde tutulduğunda bazı ayrıntılar gözden kaçabilir.
+          Yazılı problem; neyin verildiğini, neyin istendiğini ve hangi kuralların bulunduğunu görünür hale getirir.
+        </p>
+
+        <div class="method-box">
+          <h3>Problemi yazarken üç soruya cevap ver</h3>
+          <ol>
+            <li><strong>Ne veriliyor?</strong> Elimizde hangi bilgiler var?</li>
+            <li><strong>Ne isteniyor?</strong> Hangi sonucu üretmemiz gerekiyor?</li>
+            <li><strong>Hangi kurallar var?</strong> Sonucu etkileyen koşullar veya sınırlar neler?</li>
+          </ol>
+        </div>
+
+        <div class="worked-example">
+          <h3>Örnek: Not ortalaması</h3>
+          <p><strong>Problem cümlesi:</strong> Üç sınav notu verilen öğrencinin ortalamasını hesapla. Ortalama 50 veya üzerindeyse “Geçti”, değilse “Kaldı” sonucunu üret.</p>
+          <p><strong>Verilenler:</strong> Üç sınav notu.</p>
+          <p><strong>İstenen:</strong> Ortalama ve başarı durumu.</p>
+          <p><strong>Kural:</strong> Ortalama ≥ 50 ise Geçti.</p>
+        </div>
+      </section>
+
+      <section id="problemi-anla" class="lesson-block">
+        <p class="eyebrow">3. Problemi Anla</p>
+        <h2>Problemi kendi cümlelerinle yeniden anlat</h2>
+
+        <p>
+          Bir problem cümlesini okuyabilmek ile gerçekten anlamak aynı şey değildir.
+          Problemi anladığını kontrol etmenin en güçlü yöntemlerinden biri,
+          problemi kendi cümlelerinle yeniden ifade etmektir.
+        </p>
+
+        <div class="method-box">
+          <h3>Problemi anlamak için şu adımları uygula</h3>
+          <ol>
+            <li>Problemi dikkatlice oku.</li>
+            <li>Problemi kısa bir cümleyle yeniden yaz.</li>
+            <li>İstenen sonucu bir cümleyle açıkla.</li>
+            <li>Sonucu etkileyen verileri işaretle.</li>
+            <li>Gereksiz bilgileri ayır.</li>
+            <li>Varsa koşulları ve sınırları ayrı yaz.</li>
+          </ol>
+        </div>
+
+        <div class="example-box">
+          <strong>Uzun problem:</strong>
+          <p>
+            Elif'in yaşı 13'tür ve en sevdiği renk yeşildir.
+            Bir kırtasiyede kalemler 20 TL'dir.
+            Elif beş kalem alacaktır.
+            Ödeyeceği toplam tutarı bulun.
+          </p>
+
+          <p><strong>Kendi cümlemizle:</strong> 20 TL olan üründen 5 tane alınırsa toplam fiyatı bul.</p>
+          <p><strong>Gerekli bilgiler:</strong> 20 TL ve 5 adet.</p>
+          <p><strong>Gereksiz bilgiler:</strong> Elif'in yaşı ve sevdiği renk.</p>
+        </div>
+      </section>
+
+      <section id="surec" class="lesson-block">
+        <p class="eyebrow">4. Problem Çözme Süreci</p>
+        <h2>Sistemli bir yol izle</h2>
+
+        <p>
+          Problem çözme yalnızca “cevabı bulmak” değildir. Çözümün nasıl bulunduğunu açıklayabilmek,
+          farklı çözüm yollarını karşılaştırabilmek ve seçilen yolu başkasının da uygulayabileceği
+          kadar açık hale getirmek gerekir.
+        </p>
+
+        <div class="step-grid">
+          <div class="step-card"><span>1</span><h3>Problemi Yaz</h3><p>Problemi açık ve anlaşılır bir cümleye dönüştür.</p></div>
+          <div class="step-card"><span>2</span><h3>Problemi Anla</h3><p>Ne verildiğini ve ne istendiğini kendi cümlelerinle açıkla.</p></div>
+          <div class="step-card"><span>3</span><h3>Girdileri ve Kuralları Belirle</h3><p>Çözümü etkileyen verileri, koşulları ve sınırları ayır.</p></div>
+          <div class="step-card"><span>4</span><h3>Problemi Parçala</h3><p>Büyük problemi daha küçük alt problemlere böl.</p></div>
+          <div class="step-card"><span>5</span><h3>Akıl Yürüt</h3><p>Tümevarım, tümdengelim veya ikisini birlikte kullanarak ilişkileri incele.</p></div>
+          <div class="step-card"><span>6</span><h3>Çözüm Yolları Üret</h3><p>Aynı sonuca götürebilecek birden fazla yöntem düşün.</p></div>
+          <div class="step-card"><span>7</span><h3>Uygun Çözümü Seç</h3><p>Doğru, açık, uygulanabilir ve problem koşullarına uygun yolu belirle.</p></div>
+          <div class="step-card"><span>8</span><h3>Algoritmaya Dönüştür</h3><p>Seçilen çözümü açık ve sıralı işlem adımları halinde ifade et.</p></div>
+          <div class="step-card"><span>9</span><h3>Doğrula</h3><p>Çözümü ve algoritmayı normal, sınır ve özel örneklerle kontrol et.</p></div>
+        </div>
+
+        <div class="transition-note">
+          <strong>Bu dersin bittiği yer, Algoritma dersinin başladığı yerdir.</strong>
+          <p>
+            Problem Çözme dersinde “hangi çözüm yolunu kullanacağız?” sorusuna cevap veririz.
+            Algoritma dersinde ise “seçtiğimiz çözüm yolunu hangi sırayla uygulayacağız?” sorusuna geçeriz.
+          </p>
+        </div>
+      </section>
+
+      <section id="ipo" class="lesson-block">
+        <p class="eyebrow">5. Girdi - İşlem - Çıktı</p>
+        <h2>Problemi üç temel parçaya ayır</h2>
+
+        <p>
+          Programlama problemlerinin büyük bölümü girdi, işlem ve çıktı yapısıyla incelenebilir.
+        </p>
+
+        <div class="ipo-grid">
+          <div>
+            <strong>Girdi</strong>
+            <p>Programa dışarıdan verilen bilgilerdir.</p>
+            <small>Örnek: 70, 80 ve 90 notları.</small>
+          </div>
+          <div>
+            <strong>İşlem</strong>
+            <p>Girdiler üzerinde yapılan hesaplama, karşılaştırma veya dönüştürmedir.</p>
+            <small>Örnek: (70 + 80 + 90) / 3.</small>
+          </div>
+          <div>
+            <strong>Çıktı</strong>
+            <p>Çözüm sonunda elde edilen sonuçtur.</p>
+            <small>Örnek: Ortalama = 80, Geçti.</small>
+          </div>
+        </div>
+
+        <div class="concept-strip compact">
+          <span>Girdi</span>
+          <i>→</i>
+          <span>İşlem / Karar</span>
+          <i>→</i>
+          <span>Çıktı</span>
+        </div>
+      </section>
+
+      <section id="parcalama" class="lesson-block">
+        <p class="eyebrow">6. Problem Parçalama</p>
+        <h2>Büyük problemi küçük ve yönetilebilir parçalara böl</h2>
+
+        <p>
+          Karmaşık bir problemi tek seferde çözmeye çalışmak zihinsel yükü artırır.
+          Bunun yerine problemi daha küçük alt problemlere ayırmak gerekir.
+          Her küçük parça çözüldüğünde parçalar birleştirilerek ana çözüme ulaşılır.
+        </p>
+
+        <div class="example-box">
+          <strong>Problem:</strong> Bir alışveriş sepetinde ödenecek toplam tutarı hesapla.
+          <ol>
+            <li>Ürünleri belirle.</li>
+            <li>Her ürünün birim fiyatını al.</li>
+            <li>Her ürünün miktarını al.</li>
+            <li>Her ürünün ara toplamını hesapla.</li>
+            <li>Ara toplamları birleştir.</li>
+            <li>Varsa indirimi uygula.</li>
+            <li>Son ödenecek tutarı göster.</li>
+          </ol>
+        </div>
+
+        <div class="note-box">
+          Problem parçalama sırasında iki güçlü düşünme yöntemi kullanılabilir:
+          <strong>tümevarım</strong> ve <strong>tümdengelim</strong>.
+        </div>
+      </section>
+
+      <section id="tumevarim" class="lesson-block">
+        <p class="eyebrow">7. Tümevarım</p>
+        <h2>Gözlem ve örneklerden olası bir sonuca ulaşmak</h2>
+
+        <div class="research-note">
+          <strong>Önemli kavram düzeltmesi:</strong>
+          <p>
+            Tümevarım çoğu zaman “özelden genele gitmek” şeklinde öğretilir.
+            Bu ifade bazı örnekleri anlamayı kolaylaştırır; ancak tanımın tamamı değildir.
+            Daha doğru ifadeyle tümevarımsal akıl yürütmede eldeki gözlem ve kanıtlar
+            sonucu <strong>destekler veya olası hale getirir</strong>, fakat sonucu mantıksal olarak
+            zorunlu kılmaz.
+          </p>
+        </div>
+
+        <p>
+          Yani tümevarımda başlangıç noktası gözlemler, örnekler, deneyimler veya veriler olabilir.
+          Bunlardan bir örüntü, genelleme, tahmin ya da hipotez çıkarırız.
+          Sonuç güçlü biçimde desteklenebilir; yine de yeni bir gözlem geldiğinde değişebilir.
+        </p>
+
+        <div class="method-box">
+          <h3>Tümevarım nasıl uygulanır?</h3>
+          <ol>
+            <li>Birden fazla gözlem veya örnek topla.</li>
+            <li>Örnekler arasındaki benzerlikleri ve tekrar eden örüntüleri ara.</li>
+            <li>Bu örüntüyü açıklayan bir genelleme, tahmin veya hipotez oluştur.</li>
+            <li>Sonucun kesin olmadığını unutma.</li>
+            <li>Yeni örneklerle hipotezi yeniden test et.</li>
+            <li>Yeni kanıt gelirse sonucu güncellemeye hazır ol.</li>
+          </ol>
+        </div>
+
+        <div class="worked-example">
+          <h3>Gündelik hayat örneği 1: Servis saati</h3>
+          <p>
+            Okul servisi son sekiz okul gününde yaklaşık 07.35 ile 07.40 arasında gelmiştir.
+          </p>
+          <p>
+            Buradan “Servis yarın da yaklaşık bu saatlerde gelecektir.” şeklinde bir tahmin yapabiliriz.
+          </p>
+          <p>
+            Bu sonuç <strong>makuldür ama kesin değildir</strong>. Trafik, arıza veya hava koşulları sonucu değiştirebilir.
+          </p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Gündelik hayat örneği 2: Yemekhane kuyruğu</h3>
+          <p>
+            Bir hafta boyunca saat 12.30'da yemekhaneye gidildiğinde kuyruğun uzun olduğu gözleniyor.
+          </p>
+          <p>
+            “12.30 civarında yemekhane genellikle yoğun oluyor.” genellemesi yapılabilir.
+          </p>
+          <p>
+            Bu da tümevarımsal bir sonuçtur; çünkü gözlemler genellemeyi destekler ama garanti etmez.
+          </p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Programlama problemi örneği: Örneklerden kural keşfetmek</h3>
+          <p>1 ürün için toplam = fiyat × 1</p>
+          <p>2 ürün için toplam = fiyat × 2</p>
+          <p>5 ürün için toplam = fiyat × 5</p>
+          <p>
+            Bu örneklerden “Toplam tutar = birim fiyat × miktar” şeklinde genel bir kural
+            <strong>keşfetme</strong> süreci tümevarıma benzer.
+          </p>
+          <p>
+            Daha sonra kuralın farklı miktarlarda da çalışıp çalışmadığını test etmek gerekir.
+          </p>
+        </div>
+
+        <div class="method-summary">
+          <strong>Tümevarım:</strong>
+          <span>Gözlem / Örnek</span><i>→</i>
+          <span>Örüntü</span><i>→</i>
+          <span>Genelleme / Tahmin</span><i>→</i>
+          <span>Yeni Kanıtla Kontrol</span>
+        </div>
+      </section>
+
+      <section id="tumdengelim" class="lesson-block">
+        <p class="eyebrow">8. Tümdengelim</p>
+        <h2>Öncüllerden zorunlu olarak çıkan sonuca ulaşmak</h2>
+
+        <div class="research-note">
+          <strong>Önemli kavram düzeltmesi:</strong>
+          <p>
+            Tümdengelim sıkça “genelden özele gitmek” diye anlatılır.
+            Bu da yararlı bir kısa hatırlatmadır fakat tek başına yeterli bir tanım değildir.
+            Tümdengelimde asıl özellik, akıl yürütme <strong>geçerliyse</strong> ve başlangıçtaki
+            öncüller doğruysa, sonucun da doğru olmak zorunda olmasıdır.
+          </p>
+        </div>
+
+        <p>
+          Tümdengelimde elimizde bir veya daha fazla kural, kabul ya da öncül bulunur.
+          Bu öncüller arasındaki mantıksal ilişki kullanılarak sonuç çıkarılır.
+          Geçerli bir tümdengelimde öncüller doğru kabul edildiğinde sonucun yanlış olması mümkün değildir.
+        </p>
+
+        <div class="method-box">
+          <h3>Tümdengelim nasıl uygulanır?</h3>
+          <ol>
+            <li>Problemin dayandığı kural veya öncülleri açık biçimde yaz.</li>
+            <li>Verilen özel durumun bu kuralları sağlayıp sağlamadığını kontrol et.</li>
+            <li>Kurallardan mantıksal olarak hangi sonucun çıkması gerektiğini belirle.</li>
+            <li>Sonucun, öncüllerden gerçekten zorunlu olarak çıkıp çıkmadığını kontrol et.</li>
+            <li>Öncüllerden biri yanlışsa sonucun gerçek dünyada doğru olmak zorunda olmadığını unutma.</li>
+          </ol>
+        </div>
+
+        <div class="worked-example">
+          <h3>Gündelik hayat örneği 1: Kütüphane</h3>
+          <p><strong>Öncül 1:</strong> Kütüphane her gün saat 17.00'de kapanır.</p>
+          <p><strong>Öncül 2:</strong> Saat şu anda 17.30'dur.</p>
+          <p><strong>Sonuç:</strong> Kütüphane kapalıdır.</p>
+          <p>
+            Kurallar gerçekten geçerliyse ve öncüller doğruysa sonuç zorunlu olarak çıkar.
+          </p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Gündelik hayat örneği 2: Laboratuvar giriş kuralı</h3>
+          <p><strong>Öncül 1:</strong> Laboratuvara giriş için geçerli kart zorunludur.</p>
+          <p><strong>Öncül 2:</strong> Deniz'in geçerli kartı yoktur.</p>
+          <p><strong>Sonuç:</strong> Deniz laboratuvara giriş yapamaz.</p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Programlama problemi örneği: Ücretsiz kargo</h3>
+          <p><strong>Kural:</strong> Sipariş tutarı 500 TL veya üzerindeyse kargo ücretsizdir.</p>
+          <p><strong>Veri:</strong> Sipariş tutarı 650 TL'dir.</p>
+          <p><strong>Sonuç:</strong> Bu siparişte kargo ücretsizdir.</p>
+          <p>
+            Burada yeni bir kural keşfetmiyoruz; verilen kuralı belirli bir duruma uyguluyoruz.
+          </p>
+        </div>
+
+        <div class="method-summary">
+          <strong>Tümdengelim:</strong>
+          <span>Öncüller / Kurallar</span><i>→</i>
+          <span>Mantıksal Çıkarım</span><i>→</i>
+          <span>Zorunlu Sonuç</span>
+        </div>
+      </section>
+
+      <section id="birlikte" class="lesson-block">
+        <p class="eyebrow">9. Birlikte Kullanım</p>
+        <h2>Tümevarım ve tümdengelim problem çözmede birbirini tamamlayabilir</h2>
+
+        <p>
+          Gerçek hayatta problem çözerken iki yöntemi birbirinden tamamen ayırmak zorunda değiliz.
+          Bir sorunda önce gözlemlerden hareket ederek olası bir örüntü veya kural keşfedebilir,
+          sonra bu kuralı yeni bir duruma uygulayabiliriz.
+        </p>
+
+        <div class="comparison-table">
+          <div class="comparison-head">Tümevarım</div>
+          <div class="comparison-head">Tümdengelim</div>
+
+          <div>Kanıt veya gözlemler sonucu destekler.</div>
+          <div>Geçerli yapıda öncüller sonucu zorunlu kılar.</div>
+
+          <div>Sonuç olasıdır; yeni kanıtla değişebilir.</div>
+          <div>Öncüller doğru ve çıkarım geçerliyse sonuç zorunludur.</div>
+
+          <div>Genelleme, tahmin, örüntü keşfi için uygundur.</div>
+          <div>Bilinen kuralı uygulama ve mantıksal sonuç çıkarma için uygundur.</div>
+
+          <div>“Bu gözlemler neyi destekliyor?” diye sorar.</div>
+          <div>“Bu öncüllerden ne zorunlu olarak çıkar?” diye sorar.</div>
+        </div>
+
+        <div class="example-box">
+          <strong>Birlikte kullanım örneği:</strong>
+          <p>
+            Bir öğrenci farklı denemelerde daha geniş kanatlı kâğıt uçakların daha uzun süre havada kaldığını gözlüyor.
+            Buradan “Bu koşullarda daha geniş kanat uçuş süresini artırıyor olabilir.” şeklinde
+            tümevarımsal bir hipotez kurabilir.
+          </p>
+          <p>
+            Daha sonra deney için açık bir kural belirlenirse:
+            “Test düzeninde kanat genişliği 20 cm olan model A kullanılacak.”
+            ve “Model A'nın ölçülen uçuş süresi 8 saniyedir.” gibi kesin öncüllerden
+            belirli sonuçlar tümdengelimle çıkarılabilir.
+          </p>
+        </div>
+
+        <div class="research-note">
+          <strong>Kısa hatırlatma:</strong>
+          <p>
+            “Tümevarım = özelden genele, tümdengelim = genelden özele” ifadesini yalnızca
+            başlangıç düzeyinde bir yön göstergesi olarak kullanabiliriz.
+            Mantıksal açıdan temel fark, <strong>sonucun ne kadar güçlü desteklendiğidir</strong>:
+            tümevarım olasılık ve destek sağlar; geçerli tümdengelim ise öncüller doğruysa sonucu zorunlu kılar.
+          </p>
+        </div>
+      </section>
+
+      <section id="gereksiz" class="lesson-block">
+        <p class="eyebrow">10. Bilgi Seçimi</p>
+        <h2>Gerekli ve gereksiz bilgiyi ayır</h2>
+
+        <p>
+          Problem metninde verilen her bilgi çözüm için gerekli değildir.
+          Sonucu etkileyen ve etkilemeyen bilgileri ayırmak önemlidir.
+        </p>
+
+        <div class="example-box">
+          <strong>Soru:</strong>
+          <p>
+            Ali 12 yaşındadır. En sevdiği renk mavidir.
+            Bir kitabın fiyatı 120 TL'dir ve Ali iki kitap alacaktır.
+            Toplam ödeme nedir?
+          </p>
+          <p><strong>Gerekli:</strong> 120 TL ve 2 adet.</p>
+          <p><strong>Gereksiz:</strong> Yaş ve sevilen renk.</p>
+        </div>
+      </section>
+
+      <section id="kosullar" class="lesson-block">
+        <p class="eyebrow">11. Koşullar ve Sınır Değerler</p>
+        <h2>Çözümün farklı yollara ayrıldığı noktaları belirle</h2>
+
+        <p>
+          Bazı problemlerde aynı işlem her durumda uygulanmaz.
+          Bir koşula göre farklı sonuçlar oluşur.
+          Bu durumda karar noktalarını ve sınır değerlerini açık biçimde tanımlamak gerekir.
+        </p>
+
+        <div class="example-box">
+          <strong>Örnek:</strong>
+          <p>Ortalama 50 veya üzerindeyse “Geçti”, değilse “Kaldı”.</p>
+
+          <div class="decision-demo">
+            <span>Ortalama ≥ 50?</span>
+            <div><b>Evet</b> → Geçti</div>
+            <div><b>Hayır</b> → Kaldı</div>
+          </div>
+        </div>
+
+        <p>
+          Bu problemde <strong>50</strong> sınır değeridir.
+          49, 50 ve 51 gibi değerleri özellikle test etmek çözümün doğru kurulup kurulmadığını gösterir.
+        </p>
+      </section>
+
+      <section id="cozum-yollari" class="lesson-block">
+        <p class="eyebrow">12. Çözüm Yolları</p>
+        <h2>Aynı problem için birden fazla çözüm yolu olabilir</h2>
+
+        <p>
+          Bir problemi anladıktan ve parçaladıktan sonra hemen ilk akla gelen yöntemi kullanmak zorunda değiliz.
+          Aynı sonuca ulaştıran farklı çözüm yolları olabilir. Bilgisayar biliminde de aynı problemi çözen
+          birden fazla algoritmanın bulunması olağandır.
+        </p>
+
+        <div class="worked-example">
+          <h3>Gündelik örnek: Okula gitmek</h3>
+          <p><strong>Amaç:</strong> Evden okula ulaşmak.</p>
+          <p><strong>Çözüm yolu 1:</strong> Yürümek.</p>
+          <p><strong>Çözüm yolu 2:</strong> Servis kullanmak.</p>
+          <p><strong>Çözüm yolu 3:</strong> Toplu taşıma kullanmak.</p>
+          <p>
+            Üçü de probleme çözüm olabilir. Ancak süre, mesafe, güvenlik, maliyet ve mevcut koşullara göre
+            en uygun çözüm değişebilir.
+          </p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Bilgisayar bilimi örneği: Bir isim bulmak</h3>
+          <p>
+            Alfabetik bir listede bir ismi baştan sona tek tek aramak bir çözüm yoludur.
+            Listenin ortasından başlayıp arama alanını sürekli yarıya indirmek başka bir çözüm yoludur.
+          </p>
+          <p>
+            Her iki yöntem de doğru sonuca ulaşabilir; ancak bazı durumlarda biri diğerinden çok daha verimli olabilir.
+          </p>
+        </div>
+      </section>
+
+      <section id="uygun-cozum" class="lesson-block">
+        <p class="eyebrow">13. Çözüm Seçimi</p>
+        <h2>Çözüm yollarından probleme uygun olanı belirle</h2>
+
+        <p>
+          “En uygun çözüm” her zaman yalnızca “en hızlı çözüm” demek değildir.
+          Başlangıç düzeyinde bir çözümü değerlendirirken önce şu özelliklere bakabiliriz:
+        </p>
+
+        <div class="criteria-grid">
+          <div><strong>Doğruluk</strong><p>Çözüm beklenen sonucu üretiyor mu?</p></div>
+          <div><strong>Açıklık</strong><p>Çözüm başkası tarafından anlaşılabiliyor mu?</p></div>
+          <div><strong>Uygulanabilirlik</strong><p>Elimizdeki bilgi ve araçlarla uygulanabilir mi?</p></div>
+          <div><strong>Sadelik</strong><p>Gereksiz adımlar içeriyor mu?</p></div>
+          <div><strong>Kaynak Kullanımı</strong><p>Zaman veya işlem bakımından gereksiz maliyet oluşturuyor mu?</p></div>
+          <div><strong>Koşullara Uygunluk</strong><p>Problemdeki sınır ve kuralları karşılıyor mu?</p></div>
+        </div>
+
+        <div class="note-box">
+          İlerleyen algoritma dersinde aynı problemi çözen farklı algoritmaları karşılaştırmanın
+          neden önemli olduğunu daha ayrıntılı göreceğiz.
+        </div>
+      </section>
+
+      <section id="algoritmaya-gecis" class="lesson-block">
+        <p class="eyebrow">14. Algoritmaya Geçiş</p>
+        <h2>Seçilen çözüm yolunu uygulanabilir adımlara dönüştür</h2>
+
+        <div class="research-note">
+          <strong>Algoritma için daha doğru ifade:</strong>
+          <p>
+            “Algoritma bir safhadır” demek yerine, <strong>çözüm yolu belirlendikten sonra sonuca ulaşmak için
+            uygulanacak açık ve sıralı adımların oluşturduğu çözüm planına algoritma denir</strong> demek daha doğrudur.
+          </p>
+        </div>
+
+        <p>
+          NIST algoritmayı istenen bir sonuca ulaşmak için hesaplanabilir adımlar bütünü olarak tanımlar.
+          Bilgisayar bilimi öğretiminde algoritma ayrıca bir problemi çözmek için belirli bir sırada izlenen
+          talimatlar dizisi olarak ele alınır.
+        </p>
+
+        <div class="connection-chain">
+          <div><strong>Problem</strong><span>Ne çözmeliyim?</span></div>
+          <i>→</i>
+          <div><strong>Çözüm Yolu</strong><span>Nasıl çözebilirim?</span></div>
+          <i>→</i>
+          <div class="highlight"><strong>Algoritma</strong><span>Hangi adımları hangi sırayla uygulamalıyım?</span></div>
+        </div>
+
+        <div class="worked-example">
+          <h3>Örnek: Üç notun ortalamasını bul</h3>
+          <p><strong>Problem:</strong> Üç sınav notunun ortalamasını hesapla.</p>
+          <p><strong>Çözüm yolu:</strong> Notları topla ve üçe böl.</p>
+
+          <div class="algorithm-preview">
+            <strong>Algoritma ön gösterimi:</strong>
+            <ol>
+              <li>Birinci notu al.</li>
+              <li>İkinci notu al.</li>
+              <li>Üçüncü notu al.</li>
+              <li>Üç notu topla.</li>
+              <li>Toplamı 3'e böl.</li>
+              <li>Ortalamayı göster.</li>
+            </ol>
+          </div>
+        </div>
+
+        <p>
+          Dikkat edilirse problem çözme aşamasında belirlediğimiz fikir artık bir başkasının da uygulayabileceği
+          açık bir sıraya dönüştürülmüştür. İşte sonraki dersimiz tamamen bu konuya, yani <strong>Algoritma</strong>ya ayrılacaktır.
+        </p>
+      </section>
+
+      <section id="akis-semasina-gecis" class="lesson-block">
+        <p class="eyebrow">15. Akış Şemasına Geçiş</p>
+        <h2>Algoritmanın görsel gösterimine hazırlan</h2>
+
+        <p>
+          Algoritma yalnızca düz cümlelerle yazılmak zorunda değildir. Bir algoritmanın mantığı
+          sözde kodla veya görsel bir akış şemasıyla da gösterilebilir.
+          Biz ders dizimizde önce algoritmayı adım adım yazmayı öğrenecek,
+          daha sonra aynı adımları akış şemasına dönüştüreceğiz.
+        </p>
+
+        <div class="connection-chain wide">
+          <div><strong>Problem Çözme</strong><span>Çözüm fikrini oluştur</span></div>
+          <i>→</i>
+          <div><strong>Algoritma</strong><span>Çözümü sıralı adımlarla yaz</span></div>
+          <i>→</i>
+          <div><strong>Akış Şeması</strong><span>Adımları şekil ve oklarla göster</span></div>
+          <i>→</i>
+          <div><strong>Kod</strong><span>Algoritmayı programlama diliyle uygula</span></div>
+        </div>
+
+        <div class="worked-example">
+          <h3>Aynı çözümün üç görünümü</h3>
+
+          <p><strong>Problem:</strong> İki sayının toplamını bul.</p>
+
+          <p><strong>Algoritma:</strong></p>
+          <ol>
+            <li>Birinci sayıyı al.</li>
+            <li>İkinci sayıyı al.</li>
+            <li>Sayıları topla.</li>
+            <li>Toplamı göster.</li>
+          </ol>
+
+          <p><strong>Akış şeması mantığı:</strong></p>
+          <div class="mini-flow">
+            <span class="terminal-shape">Başla</span>
+            <i>↓</i>
+            <span class="io-shape">İki sayıyı al</span>
+            <i>↓</i>
+            <span class="process-shape">Topla</span>
+            <i>↓</i>
+            <span class="io-shape">Sonucu göster</span>
+            <i>↓</i>
+            <span class="terminal-shape">Bitir</span>
+          </div>
+        </div>
+
+        <div class="transition-note">
+          <strong>Dersler arasındaki anlam bağı</strong>
+          <p>
+            Problem çözme bize <strong>neyi ve nasıl çözmek istediğimizi</strong>,
+            algoritma <strong>çözümün adım sırasını</strong>,
+            akış şeması ise <strong>bu adımların görsel akışını</strong> gösterir.
+            Programlama dili de bu algoritmayı bilgisayarın çalıştırabileceği biçime dönüştürür.
+          </p>
+        </div>
+      </section>
+
+      <section id="dogrulama" class="lesson-block">
+        <p class="eyebrow">16. Doğrulama</p>
+        <h2>Çözümü farklı örneklerle kontrol et</h2>
+
+        <p>
+          Bir çözüm yalnızca tek bir örnekte doğru sonuç veriyorsa yeterince test edilmiş sayılmaz.
+          Normal durumlar, sınır değerler ve mümkünse hatalı girdiler ayrı ayrı düşünülmelidir.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Notlar</th>
+              <th>Ortalama</th>
+              <th>Beklenen Sonuç</th>
+              <th>Neden?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>70, 80, 90</td>
+              <td>80</td>
+              <td>Geçti</td>
+              <td>Normal durum</td>
+            </tr>
+            <tr>
+              <td>40, 50, 60</td>
+              <td>50</td>
+              <td>Geçti</td>
+              <td>Sınır değer</td>
+            </tr>
+            <tr>
+              <td>20, 30, 40</td>
+              <td>30</td>
+              <td>Kaldı</td>
+              <td>Koşulun diğer tarafı</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="ornekler" class="lesson-block">
+        <p class="eyebrow">17. Baştan Sona Örnek</p>
+        <h2>Problemden çözüm yoluna, çözüm yolundan algoritmaya</h2>
+
+        <div class="worked-example comprehensive-example">
+          <h3>Baştan sona örnek: Ücretsiz kargo</h3>
+          <p><strong>1. Problemi yaz:</strong> Sipariş 500 TL veya üzerindeyse kargo ücretsiz; aksi durumda 50 TL kargo ekleniyor. Ödenecek toplam tutarı bul.</p>
+          <p><strong>2. Problemi anla:</strong> Sipariş tutarına bakarak kargonun ücretli olup olmadığına karar vermeliyiz.</p>
+          <p><strong>3. Girdi:</strong> Sipariş tutarı.</p>
+          <p><strong>4. Kural:</strong> 500 TL ve üzeri ücretsiz kargo.</p>
+          <p><strong>5. Alt problemler:</strong> Tutarı al → 500 ile karşılaştır → gerekiyorsa 50 ekle → sonucu göster.</p>
+          <p><strong>6. Çözüm yolu:</strong> Bir karşılaştırma yapıp iki olası sonuçtan birini uygulamak.</p>
+          <p><strong>7. Algoritma ön gösterimi:</strong></p>
+          <ol>
+            <li>Sipariş tutarını al.</li>
+            <li>Sipariş tutarı 500 TL veya üzerindeyse toplamı sipariş tutarı olarak belirle.</li>
+            <li>Değilse toplamı sipariş tutarı + 50 TL olarak belirle.</li>
+            <li>Toplamı göster.</li>
+          </ol>
+          <p><strong>8. Akış şeması:</strong> Bir sonraki derslerden sonra bu algoritmadaki karşılaştırma karar şekliyle gösterilecektir.</p>
+          <p><strong>9. Test:</strong> 499 TL, 500 TL ve 501 TL örnekleriyle sınır değeri kontrol edilir.</p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Örnek 1: Dikdörtgen alanı</h3>
+          <p><strong>Problem:</strong> Uzun ve kısa kenarı verilen dikdörtgenin alanını bul.</p>
+          <p><strong>Girdi:</strong> Uzun kenar ve kısa kenar.</p>
+          <p><strong>Genel kural:</strong> Alan = uzun kenar × kısa kenar.</p>
+          <p><strong>Akıl yürütme:</strong> Bilinen alan kuralının verilen ölçülere uygulanması tümdengelimsel bir adımdır.</p>
+          <p><strong>Çıktı:</strong> Alan.</p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Örnek 2: Ürün toplam fiyatı</h3>
+          <p><strong>Problem:</strong> Aynı üründen farklı miktarlarda alındığında toplam fiyatı bul.</p>
+          <p><strong>Gözlem:</strong> 1 ürün = fiyat × 1, 2 ürün = fiyat × 2, 5 ürün = fiyat × 5.</p>
+          <p><strong>Genel kural:</strong> Toplam = birim fiyat × miktar.</p>
+          <p><strong>Akıl yürütme:</strong> Örneklerden ortak ilişkiyi fark ederek kuralı keşfetme tümevarımsal bir adımdır; bulunan kural yeni örneklerle sınanmalıdır.</p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Örnek 3: Kargo ücreti</h3>
+          <p><strong>Problem:</strong> Sipariş 500 TL veya üzerindeyse kargo ücretsiz; değilse 50 TL ekle.</p>
+          <p><strong>Girdi:</strong> Sipariş tutarı.</p>
+          <p><strong>Karar:</strong> Sipariş tutarı ≥ 500 mü?</p>
+          <p><strong>Sınır:</strong> 500 TL.</p>
+          <p><strong>Test değerleri:</strong> 499, 500 ve 501 TL.</p>
+        </div>
+
+        <div class="worked-example">
+          <h3>Örnek 4: En büyük sayı</h3>
+          <p><strong>Problem:</strong> İki sayıdan büyük olanı bul.</p>
+          <p><strong>Girdi:</strong> İki sayı.</p>
+          <p><strong>İşlem:</strong> Karşılaştırma.</p>
+          <p><strong>Özel durum:</strong> Sayılar birbirine eşit olabilir.</p>
+        </div>
+      </section>
+
+      <section id="hatalar" class="lesson-block">
+        <p class="eyebrow">18. Yaygın Hatalar</p>
+        <h2>Problem çözmede sık yapılan hatalar</h2>
+
+        <ul class="warning-list">
+          <li>Problemi yazmadan doğrudan çözmeye başlamak.</li>
+          <li>Problemi kendi cümleleriyle yeniden ifade etmemek.</li>
+          <li>Ne verildiği ile ne istendiğini birbirine karıştırmak.</li>
+          <li>Gereksiz bilgileri çözümün içine katmak.</li>
+          <li>Büyük problemi küçük parçalara ayırmamak.</li>
+          <li>Genel kural ile özel örneği birbirine karıştırmak.</li>
+          <li>Tümevarımsal bir sonucu kesin gerçek gibi kabul etmek ve yeni kanıtlarla sınamamak.</li>
+          <li>Tümdengelimde öncüllerin doğruluğunu veya çıkarımın geçerliliğini kontrol etmemek.</li>
+          <li>Sınır değerleri kontrol etmemek.</li>
+          <li>Tek bir örnekle çözümün doğru olduğuna karar vermek.</li>
+        </ul>
+      </section>
+
+      <section id="kontrol" class="lesson-block">
+        <p class="eyebrow">19. Ders Sonu Kontrol Listesi</p>
+        <h2>Bir probleme başlamadan önce kendine sor</h2>
+
+        <div class="check-panel">
+          <label><input type="checkbox"> Problemi açık bir cümle olarak yazdım mı?</label>
+          <label><input type="checkbox"> Problemi kendi cümlelerimle açıklayabiliyor muyum?</label>
+          <label><input type="checkbox"> Ne verildiğini belirledim mi?</label>
+          <label><input type="checkbox"> Ne istendiğini belirledim mi?</label>
+          <label><input type="checkbox"> Gerekli ve gereksiz bilgileri ayırdım mı?</label>
+          <label><input type="checkbox"> Problemi küçük parçalara böldüm mü?</label>
+          <label><input type="checkbox"> Sonucumun tümevarımsal bir tahmin mi yoksa tümdengelimsel zorunlu bir çıkarım mı olduğunu ayırt ettim mi?</label>
+          <label><input type="checkbox"> Koşul ve sınır değerleri belirledim mi?</label>
+          <label><input type="checkbox"> Çözümü farklı örneklerle kontrol ettim mi?</label>
+          <label><input type="checkbox"> Birden fazla çözüm yolu varsa uygun olanı seçebiliyor muyum?</label>
+          <label><input type="checkbox"> Seçtiğim çözüm yolunu sıralı adımlara dönüştürmenin algoritma olduğunu biliyor muyum?</label>
+          <label><input type="checkbox"> Akış şemasının algoritmanın görsel gösterimlerinden biri olduğunu açıklayabiliyor muyum?</label>
+        </div>
+
+        <div class="next-card">
+          <h3>Önce uygula, sonra Algoritma dersine geç</h3>
+          <p>
+            Problem çözme ile algoritma arasındaki bağı kurduysan 24 soruluk etkileşimli uygulamaları tamamla.
+            Bir sonraki dersimizde çözüm planlarını gerçek algoritmalara dönüştüreceğiz.
+          </p>
+          <a class="button-link" href="uygulamalar.html">Uygulamalara Geç</a>
+        </div>
+      </section>
+
+      <section id="kavram-notu" class="lesson-block">
+        <p class="eyebrow">20. Kavram Notu</p>
+        <h2>Tümevarım ve tümdengelim için neden daha dikkatli bir tanım kullandık?</h2>
+
+        <p>
+          Okul düzeyinde bu iki kavram bazen yalnızca “özelden genele” ve “genelden özele”
+          şeklinde özetlenir. Bu özet bazı örneklerde işe yarasa da mantık alanındaki daha
+          hassas ayrımı tam karşılamaz.
+        </p>
+
+        <ul class="check-list">
+          <li>
+            <strong>Tümdengelim:</strong> Geçerli bir çıkarımda öncüller doğruysa sonuç zorunlu olarak doğrudur.
+          </li>
+          <li>
+            <strong>Tümevarım:</strong> Öncüller ve gözlemler sonucu destekler veya olası kılar;
+            sonuç yeni kanıtlarla değişebilir.
+          </li>
+        </ul>
+
+        <div class="note-box">
+          Bu derste günlük hayat ve programlama örnekleri öğrencinin kavramları sezgisel olarak
+          anlayabilmesi için kullanılmıştır. İlerleyen algoritma derslerinde bu düşünme biçimleri
+          problem çözme ve test senaryolarıyla tekrar ilişkilendirilecektir.
+        </div>
+
+        <p class="source-note">
+          Kavram açıklamaları güncel mantık ve felsefe öğretim kaynaklarındaki
+          tümdengelimsel geçerlilik ve tümevarımsal destek ayrımı esas alınarak hazırlanmıştır.
+        </p>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a href="index.html">Ders Ana Sayfası</a>
+      <span>Bilişim Teknolojileri Dersi - Öğretmen: Ersin ŞANLI</span>
+    </div>
+  </footer>
+</body>
+</html>
