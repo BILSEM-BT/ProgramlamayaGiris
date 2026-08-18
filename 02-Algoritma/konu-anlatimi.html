@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Algoritma Konu Anlatımı - Bilişim Teknolojileri Dersi</title>
+<link href="assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="sub-header">
+<div class="container header-brand">
+<img alt="Niyazi Sayın Bilim ve Sanat Merkezi logosu" class="sub-logo" src="assets/nsb-logo.png"/>
+<div>
+<a class="back-link" href="index.html">Ders Ana Sayfası</a>
+<p class="eyebrow light">Niyazi Sayın Bilim ve Sanat Merkezi</p>
+<h1>Algoritma</h1>
+<p class="hero-text">Bilişim Teknolojileri Dersi - Konu Anlatımı ve Örnekler</p>
+<div class="identity-list">
+<span><strong>Kurum:</strong> Niyazi Sayın Bilim ve Sanat Merkezi</span>
+<span><strong>Ders:</strong> Bilişim Teknolojileri Dersi</span>
+<span><strong>Öğretmen:</strong> Ersin ŞANLI</span>
+</div>
+</div>
+</div>
+</header>
+<main class="container lesson-layout">
+<aside class="toc"><strong>İçindekiler</strong><a href="#baglanti">1. Problem çözmeden algoritmaya</a><a href="#algoritma-nedir">2. Algoritma nedir?</a><a href="#ozellikler">3. İyi algoritmanın özellikleri</a><a href="#yazma">4. Algoritma nasıl yazılır?</a><a href="#yazim-standardi">5. Algoritma yazım standardı</a><a href="#gunluk">6. Gündelik yaşam algoritmaları</a><a href="#cay">7. Çay demleme algoritması</a><a href="#yumurta">8. Çoklu koşul örneği</a><a href="#guncel">9. Güncel yaşam örnekleri</a><a href="#temel-yapilar">10. Temel algoritma yapıları</a><a href="#sirali">11. Sıralı algoritmalar</a><a href="#kosullu">12. Koşullu algoritmalar</a><a href="#tekrar">13. Tekrarlı algoritmalar</a><a href="#sozde-kod">14. Sözde kod</a><a href="#sayisal">15. Sayısal ve matematiksel algoritmalar</a><a href="#izleme">16. Algoritmayı adım adım izleme</a><a href="#hata">17. Algoritma hataları</a><a href="#verimlilik">18. Birden fazla algoritma</a><a href="#akis">19. Akış şemasına geçiş</a><a href="#kaynak-yaklasimi">20. Araştırma temeli</a><a href="#ozet">21. Ders özeti</a></aside>
+<article class="lesson-content">
+<section class="lesson-block" id="baglanti">
+<p class="eyebrow">1. Dersler Arası Bağlantı</p>
+<h2>Problem çözme bittiğinde algoritma başlar mı?</h2>
+<p>
+        Önceki derste problem çözmenin amacının yalnızca bir sonuca ulaşmak olmadığını gördük.
+        Problemi doğru anlamak, gerekli bilgileri belirlemek, problemi parçalamak, farklı çözüm yolları üretmek
+        ve koşullara uygun çözüm yolunu seçmek gerekiyordu.
+      </p>
+<p>
+        İşte <strong>algoritma</strong>, seçtiğimiz çözüm yolunu açık ve sıralı adımlara dönüştürdüğümüz noktada ortaya çıkar.
+        Bu nedenle Problem Çözme ile Algoritma birbirinden kopuk iki konu değildir.
+      </p>
+<div class="connection-chain">
+<div><strong>Problem</strong><span>Ne çözmeliyim?</span></div>
+<i>→</i>
+<div><strong>Çözüm Yolu</strong><span>Nasıl çözebilirim?</span></div>
+<i>→</i>
+<div class="highlight"><strong>Algoritma</strong><span>Adımları hangi sırayla uygulamalıyım?</span></div>
+</div>
+<div class="example-box">
+<strong>Problem:</strong> Üç sınav notunun ortalamasını bul.
+        <p><strong>Çözüm fikri:</strong> Üç notu topla ve üçe böl.</p>
+<p><strong>Algoritma:</strong> Notları tek tek al → topla → üçe böl → sonucu göster.</p>
+</div>
+</section>
+<section class="lesson-block" id="algoritma-nedir">
+<p class="eyebrow">2. Temel Kavram</p>
+<h2>Algoritma nedir?</h2>
+<div class="research-note">
+<strong>Tanım:</strong>
+<p>
+          Bir problemi çözmek veya belirli bir sonuca ulaşmak için uygulanacak,
+          açık biçimde tanımlanmış ve belirli bir sıraya konmuş işlem adımlarının bütününe
+          <strong>algoritma</strong> denir.
+        </p>
+</div>
+<p>
+        Algoritma yalnızca bilgisayar programlarına ait bir kavram değildir.
+        Günlük hayatta da bir işi belli bir sırayla yapıyorsak algoritmik düşünme kullanıyoruz.
+        Ancak bilgisayar için hazırlanan algoritmalarda adımların özellikle açık ve belirsizlikten uzak olması gerekir.
+      </p>
+<div class="research-note">
+<strong>Sonluluk temel özelliktir.</strong>
+<p>
+        Klasik algoritma anlayışında çözüm süreci sonlu sayıda işlemden sonra durmalı ve bir sonuca ulaşmalıdır.
+        Bu derste sonluluğu görünür hale getirmek için yazdığımız bütün başlangıç düzeyi algoritmaların
+        <strong>ilk adımı “Başla”</strong>, <strong>son adımı “Bitir”</strong> olacaktır.
+        Tekrar kullanılan algoritmalarda tekrarın hangi koşulda sona ereceği açıkça yazılacaktır.
+      </p>
+</div><div class="worked-example">
+<h3>Algoritma ile tarif aynı şey midir?</h3>
+<p>
+          Yemek tarifi algoritmayı anlamak için iyi bir benzetmedir: malzemeler vardır,
+          işlemler belirli bir sırada yapılır ve sonunda bir ürün elde edilir.
+        </p>
+<p>
+          Fakat “biraz bekle”, “göz kararı ekle”, “kıvamına gelince” gibi ifadeler insanlar için anlaşılabilirken,
+          bir bilgisayar için yeterince açık olmayabilir. Bu nedenle programlama algoritmalarında ölçü ve koşullar
+          mümkün olduğunca belirgin yazılır.
+        </p>
+</div>
+</section>
+<section class="lesson-block" id="ozellikler">
+<p class="eyebrow">3. İyi Algoritmanın Özellikleri</p>
+<h2>Bir adım listesi ne zaman iyi bir algoritma olur?</h2>
+<div class="structure-grid">
+<div><strong>Açıklık</strong><p>Her adım ne yapılacağını açıkça belirtmelidir.</p></div>
+<div><strong>Sıralılık</strong><p>Adımlar doğru sırada uygulanmalıdır.</p></div>
+<div><strong>Sonluluk</strong><p>Algoritma sonlu sayıda işlemden sonra durmalı; tekrarların bitiş koşulu açık olmalıdır.</p></div>
+<div><strong>Uygulanabilirlik</strong><p>Her adım gerçekten yapılabilir bir işlem olmalıdır.</p></div>
+<div><strong>Girdi / Bilgi</strong><p>Çözüm için gerekli veriler açıkça belirlenmelidir.</p></div>
+<div><strong>Sonuç</strong><p>Algoritmanın ne üreteceği veya hangi duruma ulaşacağı belli olmalıdır.</p></div>
+</div>
+<div class="example-grid">
+<div class="worked-example bad-example">
+<h3>Belirsiz</h3>
+<p>1. Suyu uygun miktarda ısıt.</p>
+<p>2. Bir süre bekle.</p>
+<p>3. Çay hazır olunca iç.</p>
+</div>
+<div class="worked-example good-example">
+<h3>Daha açık</h3>
+<p>1. Çaydanlığa 1 litre su koy.</p>
+<p>2. Su kaynama noktasına ulaşana kadar ısıt.</p>
+<p>3. Demliğe 3 tatlı kaşığı çay koy.</p>
+<p>4. Kaynar sudan 300 ml demliğe ekle.</p>
+<p>5. 15 dakika demle.</p>
+</div>
+</div>
+<div class="method-box">
+<h3>Başla ve Bitir neden yazılır?</h3>
+<p>
+        “Başla”, algoritmanın yürütülmeye başladığı noktayı; “Bitir” ise çözüm sürecinin sona erdiği noktayı
+        açıkça gösterir. Özellikle dallanma ve tekrar bulunan algoritmalarda kontrol akışını takip etmeyi kolaylaştırır.
+      </p>
+<p>
+        Yalnızca “Bitir” kelimesini yazmak yeterli değildir. Algoritmanın bütün olası yollarının gerçekten
+        bir bitiş durumuna ulaşabilmesi gerekir. Bir tekrar yapısı varsa, tekrar koşulunun bir noktada sona ereceği
+        açıkça tanımlanmalıdır.
+      </p>
+</div>
+<div class="example-grid">
+<div class="worked-example good-example">
+<h3>Sonlu tekrar</h3>
+<p>Başla → sayaç = 1 → sayaç ≤ 5 iken yaz ve 1 artır → Bitir</p>
+<p>Sayaç arttığı için koşul bir süre sonra yanlış olur ve algoritma sona erer.</p>
+</div>
+<div class="worked-example bad-example">
+<h3>Sonlanmayan tekrar</h3>
+<p>Başla → sayıyı 1 artır → aynı adıma dön</p>
+<p>Bir durma koşulu verilmediği için süreç Bitir durumuna ulaşamaz.</p>
+</div>
+</div>
+</section>
+<section class="lesson-block" id="yazma">
+<p class="eyebrow">4. Algoritma Yazma</p>
+<h2>Algoritma yazarken nasıl düşünmeliyiz?</h2>
+<div class="step-grid">
+<div class="step-card"><span>1</span><h3>Başla ve amacı belirle</h3><p>Algoritmanın başlangıç noktasını ve hangi problemi çözeceğini belirt.</p></div>
+<div class="step-card"><span>2</span><h3>Girdileri belirle</h3><p>Hangi bilgilere ihtiyaç olduğunu yaz.</p></div>
+<div class="step-card"><span>3</span><h3>İşlemleri sırala</h3><p>Her adımda tek ve anlaşılır bir iş yap.</p></div>
+<div class="step-card"><span>4</span><h3>Kararları belirt</h3><p>“Eğer ... ise” gibi durumları açık yaz.</p></div>
+<div class="step-card"><span>5</span><h3>Tekrarı belirt</h3><p>Kaç kez veya hangi koşula kadar tekrarlanacağını yaz.</p></div>
+<div class="step-card"><span>6</span><h3>Bitir ve test et</h3><p>Bütün olası yolların bir bitişe ulaştığını doğrula; örnek girdilerle adımları tek tek uygula.</p></div>
+</div>
+<div class="note-box">
+        Başlangıç düzeyinde algoritmayı numaralı cümlelerle yazacağız.
+        Daha sonra aynı algoritmayı <strong>sözde kod</strong> ve bir sonraki derste <strong>akış şeması</strong> ile göstereceğiz.
+      </div>
+</section><section class="lesson-block" id="yazim-standardi">
+<p class="eyebrow">5. Algoritma Yazım Standardı</p>
+<h2>Bu derste algoritmaları A1, A2, A3... biçiminde yazacağız</h2>
+<p>
+    Akış şemasına geçişi kolaylaştırmak için algoritma adımlarını numaralandıracağız.
+    Her algoritmanın ilk adımı <strong>Başla</strong>, son adımı <strong>Bitir</strong> olacaktır.
+    Koşullu bir adımda soru, olası cevaplar ve gidilecek adım aynı satırda açıkça yazılacaktır.
+  </p>
+<div class="algorithm-box">
+<h3>Koşullu adım yazım biçimi</h3>
+<p><strong>A6</strong> Su kaynadı mı? Kaynamadıysa A5'e git. Kaynadıysa A7'ye git.</p>
+<p><strong>A4</strong> Eğer a &lt; b ise ekrana “Birinci sayı daha küçüktür” yaz ve A7'ye git. Değilse A5'e git.</p>
+</div>
+<div class="method-box">
+<h3>Neden bu biçimi kullanıyoruz?</h3>
+<p><strong>Adım numarası</strong> geri dönüşleri ve dallanmaları açık hale getirir.</p>
+<p><strong>Koşulu aynı satırda yazmak</strong> Evet/Hayır ya da doğru/yanlış yollarını görmeyi kolaylaştırır.</p>
+<p><strong>Başla ve Bitir</strong> algoritmanın başlangıç ve son noktalarını belirginleştirir.</p>
+<p><strong>Adıma git</strong> ifadesi, daha sonra akış şemasında oklarla göstereceğimiz kontrol akışını hazırlar.</p>
+</div>
+</section>
+<section class="lesson-block" id="gunluk">
+<p class="eyebrow">6. Gündelik Yaşam Algoritmaları</p>
+<h2>Önce günlük hayattan algoritmik düşünme</h2>
+<p>
+        Günlük işler, algoritmanın temel mantığını öğrenmek için çok uygundur.
+        Çünkü girdi, sıra, karar ve tekrar kavramlarını programlama dili bilmeden görebiliriz.
+      </p>
+<div class="criteria-grid">
+<div><strong>Çay demleme</strong><p>Sıralı adımlar ve süre.</p></div>
+<div><strong>Yumurta pişirme</strong><p>Tercihe göre koşul ve zaman.</p></div>
+<div><strong>Telefon şarj etme</strong><p>Pil seviyesine göre karar ve bekleme.</p></div>
+<div><strong>Çevrim içi sipariş</strong><p>Ürün seçme, sepet, ödeme ve doğrulama.</p></div>
+<div><strong>QR kodla ödeme</strong><p>Okutma, tutar kontrolü, onay ve sonuç.</p></div>
+<div><strong>Dosya yükleme</strong><p>Dosya seçme, tür/boyut kontrolü ve yükleme.</p></div>
+</div>
+</section>
+<section class="lesson-block" id="cay">
+<p class="eyebrow">7. Koşullu ve Tekrarlı Gündelik Örnek</p>
+<h2>Çay demleme algoritması: koşul, geri dönüş ve sonluluk</h2>
+<p>
+  Bu örnekte koşullu ifade ayrı bir açıklama olarak değil, doğrudan algoritmanın bir adımı olarak yazılır.
+  Koşul sağlanmadığında önceki bir adıma dönülür; sağlandığında sonraki adıma geçilir.
+</p>
+<div class="algorithm-box">
+<h3>Çay demleme algoritması</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Çaydanlığa su doldur.</li>
+<li><strong>A3:</strong> Ocağı yak.</li>
+<li><strong>A4:</strong> Çaydanlığı ocağa koy.</li>
+<li><strong>A5:</strong> Bir süre suyun kaynamasını bekle.</li>
+<li><strong>A6:</strong> Su kaynadı mı? Kaynamadıysa A5'e git. Kaynadıysa A7'ye git.</li>
+<li><strong>A7:</strong> Çayı demle.</li>
+<li><strong>A8:</strong> Çaydanlığa su ilave et.</li>
+<li><strong>A9:</strong> Çaydanlığı tekrar ocağa koy.</li>
+<li><strong>A10:</strong> Bir süre suyun kaynamasını bekle.</li>
+<li><strong>A11:</strong> Su kaynadı mı? Kaynamadıysa A10'a git. Kaynadıysa A12'ye git.</li>
+<li><strong>A12:</strong> Bir süre çayın demlenmesini bekle.</li>
+<li><strong>A13:</strong> Çay demlendi mi? Demlenmediyse A12'ye git. Demlendiyse A14'e git.</li>
+<li><strong>A14:</strong> Çayı bardaklara koyup servis et.</li>
+<li><strong>A15:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="method-box">
+<h3>Bu algoritmada hangi yapılar var?</h3>
+<p><strong>Sıralı işlem:</strong> A1'den A5'e kadar işlemler sırayla ilerler.</p>
+<p><strong>Koşul:</strong> A6, A11 ve A13 adımlarında bir durum sorgulanır.</p>
+<p><strong>Dallanma:</strong> Koşulun sonucuna göre farklı adıma gidilir.</p>
+<p><strong>Tekrar:</strong> Koşul sağlanmadığında önceki bekleme adımına geri dönülür.</p>
+<p><strong>Sonluluk:</strong> Koşullar sağlandığında geri dönüşler sona erer ve algoritma A15 Bitir adımına ulaşır.</p>
+</div>
+</section>
+<section class="lesson-block" id="yumurta">
+<p class="eyebrow">8. Çoklu Koşul Örneği</p>
+<h2>Yumurta pişirme algoritması: birden fazla koşul yolunu yönetmek</h2>
+<div class="algorithm-box">
+<h3>Haşlanmış yumurta algoritması</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Yumurtayı tencereye koy.</li>
+<li><strong>A3:</strong> Yumurtayı örtecek kadar su ekle.</li>
+<li><strong>A4:</strong> Ocağı yak ve tencereyi ocağa koy.</li>
+<li><strong>A5:</strong> Bir süre suyun kaynamasını bekle.</li>
+<li><strong>A6:</strong> Su kaynadı mı? Kaynamadıysa A5'e git. Kaynadıysa A7'ye git.</li>
+<li><strong>A7:</strong> Pişirme tercihini gir: rafadan, orta veya katı.</li>
+<li><strong>A8:</strong> Tercih “rafadan” mı? Evetse kısa süre değerini ayarla ve A11'e git. Hayırsa A9'a git.</li>
+<li><strong>A9:</strong> Tercih “orta” mı? Evetse orta süre değerini ayarla ve A11'e git. Hayırsa A10'a git.</li>
+<li><strong>A10:</strong> Katı pişirme süresini ayarla.</li>
+<li><strong>A11:</strong> Belirlenen süre kadar pişir.</li>
+<li><strong>A12:</strong> Süre tamamlandı mı? Tamamlanmadıysa A11'e git. Tamamlandıysa A13'e git.</li>
+<li><strong>A13:</strong> Ocağı kapat ve yumurtayı sudan çıkar.</li>
+<li><strong>A14:</strong> Servis et.</li>
+<li><strong>A15:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="note-box">
+  Bu örnekte A8 ve A9 art arda iki karar adımıdır. Birden fazla seçeneğin bulunduğu algoritmalarda
+  koşullar bu biçimde zincirlenebilir.
+</div>
+</section>
+<section class="lesson-block" id="guncel">
+<p class="eyebrow">9. Güncel Yaşam Örnekleri</p>
+<h2>Koşul ve kontrol akışı içeren güncel süreçler</h2>
+<div class="worked-example">
+<h3>QR kodla ödeme algoritması</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Ödeme uygulamasını aç.</li>
+<li><strong>A3:</strong> QR kodu okut.</li>
+<li><strong>A4:</strong> İş yeri ve tutar bilgisini kontrol et.</li>
+<li><strong>A5:</strong> Bilgiler doğru mu? Doğru değilse A8'e git. Doğruysa A6'ya git.</li>
+<li><strong>A6:</strong> Ödemeyi onayla.</li>
+<li><strong>A7:</strong> İşlem sonucunu ekrana yaz ve A9'a git.</li>
+<li><strong>A8:</strong> “İşlem iptal edildi” mesajını ekrana yaz.</li>
+<li><strong>A9:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="worked-example">
+<h3>Dosya yükleme algoritması</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Dosyayı seç.</li>
+<li><strong>A3:</strong> Dosya türü uygun mu? Uygun değilse A8'e git. Uygunsa A4'e git.</li>
+<li><strong>A4:</strong> Dosya boyutu sınır içinde mi? Değilse A8'e git. İçindeyse A5'e git.</li>
+<li><strong>A5:</strong> Yüklemeyi başlat.</li>
+<li><strong>A6:</strong> Yükleme tamamlandı mı? Tamamlanmadıysa A5'e git. Tamamlandıysa A7'ye git.</li>
+<li><strong>A7:</strong> “Yükleme başarılı” mesajını yaz ve A9'a git.</li>
+<li><strong>A8:</strong> “Dosya yüklenemedi” mesajını yaz.</li>
+<li><strong>A9:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="worked-example">
+<h3>Telefon şarj kontrol algoritması</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Pil yüzdesini oku.</li>
+<li><strong>A3:</strong> Pil yüzdesi %20'den küçük mü? Değilse A8'e git. Küçükse A4'e git.</li>
+<li><strong>A4:</strong> Şarj cihazını bağla.</li>
+<li><strong>A5:</strong> Pil yüzdesini tekrar oku.</li>
+<li><strong>A6:</strong> Pil yüzdesi %80'e ulaştı mı? Ulaşmadıysa A5'e git. Ulaştıysa A7'ye git.</li>
+<li><strong>A7:</strong> Şarj cihazını çıkar.</li>
+<li><strong>A8:</strong> Bitir.</li>
+</ol>
+</div>
+</section>
+<section class="lesson-block" id="temel-yapilar">
+<p class="eyebrow">10. Temel Algoritma Yapıları</p>
+<h2>Algoritmaların üç temel kontrol yapısı</h2>
+<p>
+        Çok karmaşık programlar bile temel olarak üç düşünme yapısının birleşiminden oluşabilir:
+        <strong>sıralı işlem</strong>, <strong>seçim/karar</strong> ve <strong>tekrar</strong>.
+      </p>
+<div class="structure-grid">
+<div><strong>1. Sıralı</strong><p>Adımlar birbiri ardına uygulanır.</p></div>
+<div><strong>2. Koşullu / Seçimli</strong><p>Bir koşula göre farklı yollardan biri seçilir.</p></div>
+<div><strong>3. Tekrarlı</strong><p>Bir adım veya adım grubu belirli sayıda ya da koşul sağlandıkça tekrarlanır.</p></div>
+<div><strong>Birleşik</strong><p>Gerçek problemler çoğu zaman bu yapıların birkaçını birlikte kullanır.</p></div>
+</div>
+</section>
+<section class="lesson-block" id="sirali">
+<p class="eyebrow">11. Sıralı Algoritmalar</p>
+<h2>Her adım bir sonraki adıma geçer</h2>
+<div class="algorithm-box">
+<h3>Dikdörtgenin alanını hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Uzun kenarı gir (a).</li>
+<li><strong>A3:</strong> Kısa kenarı gir (b).</li>
+<li><strong>A4:</strong> Alanı hesapla ve alan değişkenine ata (alan = a * b).</li>
+<li><strong>A5:</strong> Alan değişkenini ekrana yaz.</li>
+<li><strong>A6:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="pseudo-box">
+<h3>Sözde kod ön gösterimi</h3>
+<div class="pseudo">BAŞLA
+uzunKenar değerini al
+kisaKenar değerini al
+alan = uzunKenar * kisaKenar
+alan değerini göster
+BİTİR</div>
+</div>
+</section>
+<section class="lesson-block" id="kosullu">
+<p class="eyebrow">12. Koşullu Algoritmalar</p>
+<h2>Koşulu aynı adım içinde değerlendir ve gidilecek adımı açıkça belirt</h2>
+<p>
+  Koşullu algoritmalarda öğrencinin hangi durumda hangi adıma gideceğini doğrudan görebilmesi önemlidir.
+  Bu nedenle koşulu ve yönlendirmeyi aynı satırda yazıyoruz.
+</p>
+<div class="algorithm-box">
+<h3>Girilen bir sayının pozitif mi negatif mi olduğunu ekrana yazdıran algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Sayıyı gir (sayi).</li>
+<li><strong>A3:</strong> Eğer sayi = 0 ise A2'ye geri dön. Değilse A4'e git.</li>
+<li><strong>A4:</strong> Eğer sayi &lt; 0 ise ekrana “Girilen sayı negatiftir” yaz ve A6'ya git. Değilse A5'e git.</li>
+<li><strong>A5:</strong> Eğer sayi &gt; 0 ise ekrana “Girilen sayı pozitiftir” yaz.</li>
+<li><strong>A6:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>Girilen iki sayıdan hangisinin daha küçük olduğunu ekrana yazdıran algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Birinci sayıyı gir (a).</li>
+<li><strong>A3:</strong> İkinci sayıyı gir (b).</li>
+<li><strong>A4:</strong> Eğer a &lt; b ise ekrana “Birinci sayı daha küçüktür” yaz ve A7'ye git. Değilse A5'e git.</li>
+<li><strong>A5:</strong> Eğer b &lt; a ise ekrana “İkinci sayı daha küçüktür” yaz ve A7'ye git. Değilse A6'ya git.</li>
+<li><strong>A6:</strong> Ekrana “Sayılar eşittir” yaz.</li>
+<li><strong>A7:</strong> Bitir.</li>
+</ol>
+</div>
+</section>
+<section class="lesson-block" id="tekrar">
+<p class="eyebrow">13. Tekrarlı Algoritmalar</p>
+<h2>Belirli bir koşul sağlanana kadar önceki adıma geri dön</h2>
+<div class="algorithm-box">
+<h3>1 ile 1000 arasındaki sayıları ekrana yazdıran algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> sayi değişkenine 0 değerini ata.</li>
+<li><strong>A3:</strong> Eğer sayi değişkeni 999'dan büyük ise A6'ya git. Değilse A4'e git.</li>
+<li><strong>A4:</strong> sayi değişkenine 1 ekle ve sonucu tekrar sayi değişkenine ata (sayi = sayi + 1).</li>
+<li><strong>A5:</strong> sayi değişkenini ekrana yaz ve A3'e geri dön.</li>
+<li><strong>A6:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="method-box">
+<h3>Tekrarın sonlu olmasını sağlayan nedir?</h3>
+<p>
+    A4 adımında <strong>sayi</strong> değeri sürekli artırılır. Bu nedenle bir süre sonra A3'teki
+    <strong>sayi &gt; 999</strong> koşulu doğru olur ve algoritma A6 Bitir adımına gider.
+  </p>
+</div>
+</section>
+<section class="lesson-block" id="sozde-kod">
+<p class="eyebrow">14. Sözde Kod</p>
+<h2>Programlama diline geçmeden algoritmayı daha düzenli yaz</h2>
+<p>
+<strong>Sözde kod (pseudocode)</strong>, gerçek bir programlama dilinin kesin yazım kurallarına bağlı kalmadan
+        algoritmayı programlama mantığına yakın biçimde ifade etme yöntemidir.
+      </p>
+<div class="example-grid">
+<div class="algorithm-box">
+<h3>Doğal dil</h3>
+<ol>
+<li>İki sayı al.</li>
+<li>Sayıları topla.</li>
+<li>Sonucu göster.</li>
+</ol>
+</div>
+<div class="pseudo-box">
+<h3>Sözde kod</h3>
+<div class="pseudo">BAŞLA
+a değerini al
+b değerini al
+toplam = a + b
+toplam değerini göster
+BİTİR</div>
+</div>
+</div>
+<div class="note-box">
+        Sözde kodun tek ve zorunlu bir yazım biçimi yoktur. Ama amaç değişmez:
+        algoritmanın mantığını açık, tutarlı ve programlama dilinden bağımsız göstermek.
+      </div>
+</section>
+<section class="lesson-block" id="sayisal">
+<p class="eyebrow">15. Sayısal ve Matematiksel Algoritmalar</p><div class="transition-note">
+<strong>Akış Şemaları dersi için aynı örnekleri kullanacağız.</strong>
+<p>
+    Bu bölümdeki adım numaraları korunacak. Bir sonraki derste A1 Başla, giriş adımları,
+    işlem adımları, koşullu adımlar, geri dönüşler ve Bitir adımı aynı sırayla akış şeması
+    sembollerine dönüştürülecek. Böylece öğrenci aynı problemin önce algoritmasını, sonra görsel
+    akışını karşılaştırabilecek.
+  </p>
+</div>
+<h2>Akış şemalarında da kullanacağımız temel sayısal algoritmalar</h2>
+<p>
+  Aşağıdaki örnekler aynı adım numaraları korunarak bir sonraki Akış Şemaları dersinde
+  başlangıç/bitiş, giriş/çıkış, işlem, karar ve geri dönüş sembollerine dönüştürülecektir.
+</p>
+<div class="algorithm-box">
+<h3>1. Girilen iki sayının ortalamasını hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Birinci sayıyı gir (a).</li>
+<li><strong>A3:</strong> İkinci sayıyı gir (b).</li>
+<li><strong>A4:</strong> İki sayıyı toplayıp sonucu toplam değişkenine ata (toplam = a + b).</li>
+<li><strong>A5:</strong> Toplam değişkenini 2'ye böl ve sonucu ortalama değişkenine ata (ortalama = toplam / 2).</li>
+<li><strong>A6:</strong> Ortalama değişkenini ekrana yaz.</li>
+<li><strong>A7:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>2. Girilen iki sayıdan büyük olanı bulan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Birinci sayıyı gir (a).</li>
+<li><strong>A3:</strong> İkinci sayıyı gir (b).</li>
+<li><strong>A4:</strong> Eğer a &gt; b ise ekrana “Birinci sayı daha büyüktür” yaz ve A7'ye git. Değilse A5'e git.</li>
+<li><strong>A5:</strong> Eğer b &gt; a ise ekrana “İkinci sayı daha büyüktür” yaz ve A7'ye git. Değilse A6'ya git.</li>
+<li><strong>A6:</strong> Ekrana “Sayılar eşittir” yaz.</li>
+<li><strong>A7:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>3. Girilen sayının çift mi tek mi olduğunu bulan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Sayıyı gir (sayi).</li>
+<li><strong>A3:</strong> sayi değişkeninin 2'ye göre modunu al (mod = sayi % 2).</li>
+<li><strong>A4:</strong> Eğer mod = 0 ise ekrana “Sayı çifttir” yaz ve A6'ya git. Değilse A5'e git.</li>
+<li><strong>A5:</strong> Ekrana “Sayı tektir” yaz.</li>
+<li><strong>A6:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>4. Girilen üç sayının ortalamasını hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Birinci sayıyı gir (a).</li>
+<li><strong>A3:</strong> İkinci sayıyı gir (b).</li>
+<li><strong>A4:</strong> Üçüncü sayıyı gir (c).</li>
+<li><strong>A5:</strong> Sayıları topla (toplam = a + b + c).</li>
+<li><strong>A6:</strong> Ortalamayı hesapla (ortalama = toplam / 3).</li>
+<li><strong>A7:</strong> Ortalama değişkenini ekrana yaz.</li>
+<li><strong>A8:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>5. Dikdörtgenin alanını ve çevresini hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Uzun kenarı gir (a).</li>
+<li><strong>A3:</strong> Kısa kenarı gir (b).</li>
+<li><strong>A4:</strong> Alanı hesapla (alan = a * b).</li>
+<li><strong>A5:</strong> Çevreyi hesapla (cevre = 2 * (a + b)).</li>
+<li><strong>A6:</strong> Alan ve çevre değerlerini ekrana yaz.</li>
+<li><strong>A7:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box"><h3>6. 1'den N'e kadar olan sayıları ekrana yazdıran algoritma</h3><ol class="algorithm-steps"><li><strong>A1:</strong> Başla.</li><li><strong>A2:</strong> N sayısını gir.</li><li><strong>A3:</strong> sayac = 1 ata.</li><li><strong>A4:</strong> Eğer sayac &gt; N ise A7'ye git. Değilse A5'e git.</li><li><strong>A5:</strong> sayac değişkenini ekrana yaz.</li><li><strong>A6:</strong> sayac = sayac + 1 işlemini yap ve A4'e geri dön.</li><li><strong>A7:</strong> Bitir.</li></ol></div><div class="algorithm-box">
+<h3>7. 1'den N'e kadar olan tamsayıların toplamını hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> N sayısını gir.</li>
+<li><strong>A3:</strong> toplam değişkenine 0 ata.</li>
+<li><strong>A4:</strong> sayac değişkenine 0 ata.</li>
+<li><strong>A5:</strong> Eğer sayac &gt; N - 1 ise A8'e git. Değilse A6'ya git.</li>
+<li><strong>A6:</strong> sayac değerini 1 artır (sayac = sayac + 1).</li>
+<li><strong>A7:</strong> toplam = toplam + sayac işlemini yap ve A5'e geri dön.</li>
+<li><strong>A8:</strong> toplam değişkenini ekrana yaz.</li>
+<li><strong>A9:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>8. 1'den N'e kadar olan tek tamsayıların toplamını hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> N sayısını gir.</li>
+<li><strong>A3:</strong> sayac = 1 ata.</li>
+<li><strong>A4:</strong> toplam = 0 ata.</li>
+<li><strong>A5:</strong> Eğer sayac &gt; N ise A10'a git. Değilse A6'ya git.</li>
+<li><strong>A6:</strong> sayac değişkeninin 2'ye göre modunu al (mod = sayac % 2).</li>
+<li><strong>A7:</strong> Eğer mod = 0 ise A9'a git. Değilse A8'e git.</li>
+<li><strong>A8:</strong> toplam = toplam + sayac işlemini yap.</li>
+<li><strong>A9:</strong> sayac = sayac + 1 işlemini yap ve A5'e geri dön.</li>
+<li><strong>A10:</strong> toplam değişkenini ekrana yaz.</li>
+<li><strong>A11:</strong> Bitir.</li>
+</ol>
+</div><div class="algorithm-box alternative-box"><h3>8A. Aynı problemin daha kısa çözümü: Tek sayıları 2'şer artırarak toplama</h3><ol class="algorithm-steps"><li><strong>A1:</strong> Başla.</li><li><strong>A2:</strong> N sayısını gir.</li><li><strong>A3:</strong> sayac = 1 ata.</li><li><strong>A4:</strong> toplam = 0 ata.</li><li><strong>A5:</strong> Eğer sayac &gt; N ise A8'e git. Değilse A6'ya git.</li><li><strong>A6:</strong> toplam = toplam + sayac işlemini yap.</li><li><strong>A7:</strong> sayac = sayac + 2 işlemini yap ve A5'e geri dön.</li><li><strong>A8:</strong> toplam değişkenini ekrana yaz.</li><li><strong>A9:</strong> Bitir.</li></ol></div><div class="method-box">
+<h3>İki çözüm arasındaki fark</h3>
+<p>
+    İlk çözümde sayaç 1'er artırılır ve her sayının tek olup olmadığı <strong>mod = sayac % 2</strong>
+    işlemiyle kontrol edilir. Kısa çözümde ise sayaç 1'den başlatılıp doğrudan 2'şer artırıldığı için
+    sayaç yalnızca tek değerler alır; böylece mod kontrolüne gerek kalmaz.
+  </p>
+<p>
+    İki algoritma da aynı problemi çözer. İkinci çözüm daha az kontrol adımı kullandığı için
+    algoritma tasarımında <strong>aynı probleme farklı çözüm yolları</strong> bulunabileceğini açık biçimde gösterir.
+  </p>
+</div>
+<div class="algorithm-box">
+<h3>9. 1'den N'e kadar olan çift tamsayıların toplamını hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> N sayısını gir.</li>
+<li><strong>A3:</strong> sayac = 1 ata.</li>
+<li><strong>A4:</strong> toplam = 0 ata.</li>
+<li><strong>A5:</strong> Eğer sayac &gt; N ise A10'a git. Değilse A6'ya git.</li>
+<li><strong>A6:</strong> mod = sayac % 2 işlemini yap.</li>
+<li><strong>A7:</strong> Eğer mod = 0 ise A8'e git. Değilse A9'a git.</li>
+<li><strong>A8:</strong> toplam = toplam + sayac işlemini yap.</li>
+<li><strong>A9:</strong> sayac = sayac + 1 işlemini yap ve A5'e geri dön.</li>
+<li><strong>A10:</strong> toplam değişkenini ekrana yaz.</li>
+<li><strong>A11:</strong> Bitir.</li>
+</ol>
+</div><div class="algorithm-box alternative-box"><h3>9A. Aynı problemin daha kısa çözümü: Çift sayıları 2'şer artırarak toplama</h3><ol class="algorithm-steps"><li><strong>A1:</strong> Başla.</li><li><strong>A2:</strong> N sayısını gir.</li><li><strong>A3:</strong> sayac = 0 ata.</li><li><strong>A4:</strong> toplam = 0 ata.</li><li><strong>A5:</strong> Eğer sayac &gt; N ise A8'e git. Değilse A6'ya git.</li><li><strong>A6:</strong> toplam = toplam + sayac işlemini yap.</li><li><strong>A7:</strong> sayac = sayac + 2 işlemini yap ve A5'e geri dön.</li><li><strong>A8:</strong> toplam değişkenini ekrana yaz.</li><li><strong>A9:</strong> Bitir.</li></ol></div><div class="method-box">
+<h3>İki çözüm arasındaki fark</h3>
+<p>
+    İlk çözümde sayaç 1'er artırılır ve her sayının çift olup olmadığı mod işlemiyle kontrol edilir.
+    Kısa çözümde sayaç 0'dan başlatılıp 2'şer artırıldığı için yalnızca çift değerler elde edilir
+    ve mod kontrolü ortadan kalkar.
+  </p>
+<p>
+    Burada ilk toplanan değer 0'dır; 0 toplamanın etkisiz elemanı olduğu için toplamı değiştirmez.
+    Aynı fikir sayaç = 2 ile başlatılarak da kurulabilir.
+  </p>
+</div>
+<div class="algorithm-box">
+<h3>10. Girilen N sayısının faktöriyelini hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> N sayısını gir.</li>
+<li><strong>A3:</strong> sonuc = 1 ata.</li>
+<li><strong>A4:</strong> sayac = 1 ata.</li>
+<li><strong>A5:</strong> Eğer sayac &gt; N ise A8'e git. Değilse A6'ya git.</li>
+<li><strong>A6:</strong> sonuc = sonuc * sayac işlemini yap.</li>
+<li><strong>A7:</strong> sayac = sayac + 1 işlemini yap ve A5'e geri dön.</li>
+<li><strong>A8:</strong> sonuc değişkenini ekrana yaz.</li>
+<li><strong>A9:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>11. Girilen sayının 3'e ve 5'e tam bölünüp bölünmediğini bulan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Sayıyı gir (sayi).</li>
+<li><strong>A3:</strong> mod3 = sayi % 3 ve mod5 = sayi % 5 işlemlerini yap.</li>
+<li><strong>A4:</strong> Eğer mod3 = 0 ve mod5 = 0 ise ekrana “Sayı 3'e ve 5'e tam bölünür” yaz ve A6'ya git. Değilse A5'e git.</li>
+<li><strong>A5:</strong> Ekrana “Sayı 3'e ve 5'e birlikte tam bölünmez” yaz.</li>
+<li><strong>A6:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>12. Girilen üç sayıdan en büyük olanı bulan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> a, b ve c sayılarını gir.</li>
+<li><strong>A3:</strong> enBuyuk = a ata.</li>
+<li><strong>A4:</strong> Eğer b &gt; enBuyuk ise enBuyuk = b yap. Değilse A5'e git.</li>
+<li><strong>A5:</strong> Eğer c &gt; enBuyuk ise enBuyuk = c yap. Değilse A6'ya git.</li>
+<li><strong>A6:</strong> enBuyuk değişkenini ekrana yaz.</li>
+<li><strong>A7:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>13. N sayısından 1'e kadar sayıları geriye doğru yazdıran algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> N sayısını gir.</li>
+<li><strong>A3:</strong> sayac = N ata.</li>
+<li><strong>A4:</strong> Eğer sayac &lt; 1 ise A7'ye git. Değilse A5'e git.</li>
+<li><strong>A5:</strong> sayac değerini ekrana yaz.</li>
+<li><strong>A6:</strong> sayac = sayac - 1 işlemini yap ve A4'e geri dön.</li>
+<li><strong>A7:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>14. Girilen sayının karesini ve küpünü hesaplayan algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Sayıyı gir (sayi).</li>
+<li><strong>A3:</strong> kare = sayi * sayi işlemini yap.</li>
+<li><strong>A4:</strong> kup = sayi * sayi * sayi işlemini yap.</li>
+<li><strong>A5:</strong> kare ve kup değişkenlerini ekrana yaz.</li>
+<li><strong>A6:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>15. Girilen not ortalamasına göre başarı durumunu belirleyen algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> Not ortalamasını gir (ortalama).</li>
+<li><strong>A3:</strong> Eğer ortalama &gt;= 50 ise ekrana “Geçti” yaz ve A5'e git. Değilse A4'e git.</li>
+<li><strong>A4:</strong> Ekrana “Kaldı” yaz.</li>
+<li><strong>A5:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="algorithm-box">
+<h3>16. N sayısının çarpım tablosunu 1'den 10'a kadar yazdıran algoritma</h3>
+<ol class="algorithm-steps">
+<li><strong>A1:</strong> Başla.</li>
+<li><strong>A2:</strong> N sayısını gir.</li>
+<li><strong>A3:</strong> sayac = 1 ata.</li>
+<li><strong>A4:</strong> Eğer sayac &gt; 10 ise A8'e git. Değilse A5'e git.</li>
+<li><strong>A5:</strong> sonuc = N * sayac işlemini yap.</li>
+<li><strong>A6:</strong> N, sayac ve sonuc değerlerini ekrana yaz.</li>
+<li><strong>A7:</strong> sayac = sayac + 1 işlemini yap ve A4'e geri dön.</li>
+<li><strong>A8:</strong> Bitir.</li>
+</ol>
+</div>
+<div class="note-box">
+<strong>Sınır değer notu:</strong>
+  “1'den N'e kadar” ifadesinde N değerinin de işleme dahil edilmesi gerekir.
+  Bu nedenle tek/çift toplam örneklerinde bitiş kontrolü <strong>sayac &gt; N</strong> biçiminde kurulmuştur.
+</div>
+</section>
+<section class="lesson-block" id="izleme">
+<p class="eyebrow">16. Algoritmayı Adım Adım İzleme</p>
+<h2>Algoritmayı çalıştırmadan önce masa başında test et</h2>
+<p>
+        Algoritmanın adımlarını örnek değerlerle tek tek uygulamaya <strong>izleme (trace)</strong> diyebiliriz.
+        Böylece yanlış işlem sırası, eksik koşul veya hatalı tekrar daha kod yazmadan fark edilebilir.
+      </p>
+<div class="trace-box">
+<h3>Örnek: 1'den 4'e kadar sayıların toplamı</h3><p>Başla adımından sonra sayaç ve toplam hazırlanır; sayaç 4'ü geçtiğinde tekrar sona erer ve Bitir adımına ulaşılır.</p>
+<table class="data-table">
+<thead><tr><th>Adım</th><th>Sayaç</th><th>Toplam</th></tr></thead>
+<tbody>
+<tr><td>Başlangıç</td><td>1</td><td>0</td></tr>
+<tr><td>1 eklendi</td><td>2</td><td>1</td></tr>
+<tr><td>2 eklendi</td><td>3</td><td>3</td></tr>
+<tr><td>3 eklendi</td><td>4</td><td>6</td></tr>
+<tr><td>4 eklendi</td><td>5</td><td>10</td></tr>
+</tbody>
+</table>
+<p><strong>Sonuç:</strong> 10</p>
+</div>
+<div class="interactive-panel">
+<h3>Mini deneme: İki sayının büyüğünü bul</h3>
+<label for="demoA">Birinci sayı</label>
+<input id="demoA" type="number" value="12"/>
+<label for="demoB" style="margin-top:10px">İkinci sayı</label>
+<input id="demoB" type="number" value="8"/>
+<div style="margin-top:12px">
+<button class="primary-button" id="runCompare" type="button">Algoritmayı Çalıştır</button>
+</div>
+<div class="demo-output" id="compareOutput">Adımlar burada görünecek.</div>
+</div>
+</section>
+<section class="lesson-block" id="hata">
+<p class="eyebrow">17. Algoritma Hataları</p>
+<h2>En sık karşılaşılan hatalar</h2>
+<ul class="warning-list">
+<li>Adımların yanlış sırada yazılması.</li>
+<li>“Biraz”, “uygun”, “yeterince” gibi belirsiz ifadelerin açıklanmaması.</li>
+<li>Bir kararın bazı olasılıklarının unutulması.</li>
+<li>Tekrar yapısının ne zaman biteceğinin belirtilmemesi; algoritmanın Bitir durumuna ulaşamaması.</li>
+<li>Girdilerin hangi aralıkta olabileceğinin düşünülmemesi.</li>
+<li>Sınır değerlerin test edilmemesi.</li>
+<li>Algoritmanın doğru sonucu üretip üretmediğinin örneklerle izlenmemesi.</li>
+</ul>
+<div class="worked-example bad-example">
+<h3>Hatalı tekrar örneği</h3>
+<p>“Sayıyı sürekli 1 artır.”</p>
+<p>Bu ifade <strong>ne zaman duracağını söylemediği için</strong> tamamlanmış bir algoritma değildir.</p>
+</div>
+</section>
+<section class="lesson-block" id="verimlilik">
+<p class="eyebrow">18. Birden Fazla Algoritma</p>
+<h2>Aynı problem farklı algoritmalarla çözülebilir</h2>
+<p>
+        Bir algoritmanın doğru olması önemlidir; ancak tek ölçüt doğruluk değildir.
+        Bazı çözümler daha az adım, daha az zaman veya daha az kaynak kullanabilir.
+      </p>
+<div class="worked-example">
+<h3>Örnek: 1'den 100'e kadar sayıların toplamı</h3>
+<p><strong>Yöntem A:</strong> 1 + 2 + 3 + ... + 100 şeklinde bütün sayıları tek tek toplamak.</p>
+<p><strong>Yöntem B:</strong> Bilinen matematiksel toplam formülünü kullanmak.</p>
+<p>
+          İki yöntem de doğru sonuç verebilir; fakat uygulanan adım sayısı farklıdır.
+          İlerleyen programlama derslerinde algoritma verimliliğini daha ayrıntılı inceleyebiliriz.
+        </p>
+</div>
+</section>
+<section class="lesson-block" id="akis">
+<p class="eyebrow">19. Akış Şemasına Geçiş</p>
+<h2>Algoritmayı artık görsel olarak ifade etmeye hazırız</h2>
+<p>
+        Bu derste algoritmayı doğal dil ve sözde kodla yazdık.
+        Sonraki derste aynı algoritmanın adımlarını <strong>standart şekiller ve yön okları</strong> kullanarak
+        akış şemasına dönüştüreceğiz.
+      </p>
+<div class="connection-chain">
+<div><strong>Algoritma</strong><span>Adımları yaz</span></div>
+<i>→</i>
+<div class="highlight"><strong>Akış Şeması</strong><span>Adımları görsel olarak göster</span></div>
+<i>→</i>
+<div><strong>Programlama</strong><span>Algoritmayı kodla uygula</span></div>
+</div>
+<div class="worked-example">
+<h3>Ön gösterim: İki sayıyı topla</h3>
+<div class="flow-preview">
+<span class="terminal">Başla</span><i>↓</i>
+<span class="io">İki sayıyı al</span><i>↓</i>
+<span class="process">Toplam = sayı1 + sayı2</span><i>↓</i>
+<span class="io">Toplamı göster</span><i>↓</i>
+<span class="terminal">Bitir</span>
+</div>
+<p>
+          Buradaki şekillerin anlamını ve hangi durumda hangi şeklin kullanılacağını bir sonraki
+          <strong>Akış Şemaları</strong> dersinde ayrıntılı öğreneceğiz.
+        </p>
+</div>
+</section>
+<section class="lesson-block" id="kaynak-yaklasimi">
+<p class="eyebrow">20. Araştırma Temeli</p>
+<h2>Bu derste kullandığımız algoritma yaklaşımı</h2>
+<p>
+        Ders içeriği hazırlanırken algoritma kavramı için NIST'in “istenen bir sonuca ulaşmak için hesaplanabilir adımlar”
+        yaklaşımı; MIT ve Harvard ders materyallerindeki sonluluk, açık-sıralı adımlar, girdi/çıktı ve
+        koşullu/tekrarlı kontrol akışı açıklamaları dikkate alınmıştır.
+      </p>
+<p>
+        Akış şemalarında kullanılacak sembol ve gösterimlerin ayrıntıları bir sonraki derste ele alınacaktır.
+        Bu konuda ISO 5807'nin program ve sistem akış şemaları için sembol ve kullanım kuralları tanımlayan
+        uluslararası standart olduğu dikkate alınacaktır.
+      </p>
+<a class="button-link" href="kaynaklar.html">Araştırma Kaynaklarını Gör</a>
+</section><section class="lesson-block" id="ozet">
+<p class="eyebrow">21. Ders Özeti</p>
+<h2>Algoritma dersinden akılda kalması gerekenler</h2>
+<div class="check-panel">
+<label><input type="checkbox"/> Problem ile algoritma arasındaki ilişkiyi açıklayabiliyorum.</label>
+<label><input type="checkbox"/> Bir işi açık ve sıralı adımlara bölebiliyorum.</label>
+<label><input type="checkbox"/> Sıralı, koşullu ve tekrarlı algoritmaları ayırt edebiliyorum.</label>
+<label><input type="checkbox"/> Basit sözde kodları okuyabiliyorum.</label>
+<label><input type="checkbox"/> Sayısal bir problem için algoritma yazabiliyorum.</label>
+<label><input type="checkbox"/> Algoritmayı örnek değerlerle adım adım test edebiliyorum.</label>
+<label><input type="checkbox"/> Algoritma ile akış şeması arasındaki bağlantıyı açıklayabiliyorum.</label>
+</div>
+<div class="next-card">
+<h3>Şimdi uygulama zamanı</h3>
+<p>
+          Önce gündelik yaşam algoritmalarını, sonra sayısal algoritmaları, en sonunda karışık değerlendirmeyi tamamla.
+        </p>
+<a class="button-link" href="uygulamalar.html">Uygulama Merkezine Geç</a>
+</div>
+</section>
+</article>
+</main>
+<footer class="footer">
+<div class="container footer-row">
+<a href="index.html">Ders Ana Sayfası</a>
+<span>Bilişim Teknolojileri Dersi - Öğretmen: Ersin ŞANLI</span>
+</div>
+</footer>
+<script src="assets/konu.js"></script>
+</body>
+</html>

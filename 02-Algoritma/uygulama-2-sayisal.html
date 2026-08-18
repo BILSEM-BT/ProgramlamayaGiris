@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Sayısal Algoritmalar - Algoritma</title>
+<link href="assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="sub-header">
+<div class="container header-brand">
+<img alt="Niyazi Sayın Bilim ve Sanat Merkezi logosu" class="sub-logo" src="assets/nsb-logo.png"/>
+<div>
+<a class="back-link" href="uygulamalar.html">Uygulama Merkezi</a>
+<p class="eyebrow light">Niyazi Sayın Bilim ve Sanat Merkezi</p>
+<h1>Sayısal Algoritmalar</h1>
+<p class="hero-text">Aritmetik işlemler, ortalama, karşılaştırma, çift/tek, toplam ve tekrar yapıları.</p>
+<div class="identity-list">
+<span><strong>Ders:</strong> Bilişim Teknolojileri Dersi</span>
+<span><strong>Öğretmen:</strong> Ersin ŞANLI</span>
+</div>
+</div>
+</div>
+</header>
+<main class="container">
+<section class="quiz-summary">
+<div>
+<p class="eyebrow">İlerleme</p>
+<strong id="progressText">0 / 10 soru cevaplandı</strong>
+</div>
+<div class="score-box"><span>Doğru</span><strong id="scoreText">0</strong></div>
+<div class="score-box"><span>Yanlış</span><strong id="wrongText">0</strong></div>
+<button class="secondary-button" id="resetAllBtn" type="button">Bu Bölümü Sıfırla</button>
+<div class="progress-track full"><div class="progress-fill" id="progressBar"></div></div>
+</section>
+<section class="quiz-info">
+<h2>Sayısal Algoritmalar</h2>
+<p>Aritmetik işlemler, ortalama, karşılaştırma, çift/tek, toplam ve tekrar yapıları. Her cevaptan sonra açıklamayı oku.</p>
+</section>
+<div id="quizContainer"></div>
+<section class="final-panel">
+<h2>Bölüm Sonucu</h2>
+<p id="finalMessage">Bütün soruları tamamladığında genel değerlendirme burada görünecek.</p>
+
+</section>
+</main>
+<footer class="footer">
+<div class="container footer-row">
+<a href="konu-anlatimi.html">Konu Anlatımı</a>
+<span>Bilişim Teknolojileri Dersi - Öğretmen: Ersin ŞANLI</span>
+</div>
+</footer>
+<script src="assets/questions-sayisal.js"></script>
+<script src="assets/quiz-engine.js"></script>
+</body>
+</html>
