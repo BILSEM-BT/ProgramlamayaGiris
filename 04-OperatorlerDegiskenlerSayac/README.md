@@ -154,7 +154,7 @@ ProgramlamayaGiris/
 ## GitHub Pages
 
 ```text
-https://bilsem-bt.github.io/ProgramlamayaGiris/04-Operatorler-Degiskenler-Sayac/
+https://bilsem-bt.github.io/ProgramlamayaGiris/04-OperatorlerDegiskenlerSayac/
 ```
 
 ## Dersler Arası Bağlantı
