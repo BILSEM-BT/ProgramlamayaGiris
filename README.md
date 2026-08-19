@@ -6,3 +6,5 @@ Niyazi Sayın BİLSEM Bilişim Teknolojileri Dersi
 02 - Algoritma: https://bilsem-bt.github.io/ProgramlamayaGiris/02-Algoritma/
 
 03 - Akış Şemaları: https://bilsem-bt.github.io/ProgramlamayaGiris/03-AkisSemalari/
+
+04 - Operatörler Değişkenler ve Sayaç: https://bilsem-bt.github.io/ProgramlamayaGiris/04-OperatorlerDegiskenlerSayac/
