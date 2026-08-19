@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operatörler, Değişkenler ve Sayaç Mantığı - Konu Anlatımı</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="sub-header">
+  <div class="container header-brand">
+    <div class="brand-row">
+      <img class="sub-logo" src="assets/nsb-logo.png" alt="Niyazi Sayın Bilim ve Sanat Merkezi logosu">
+      <div>
+        <a class="back-link" href="index.html">Ders Ana Sayfası</a>
+        <p class="eyebrow light">Niyazi Sayın Bilim ve Sanat Merkezi</p>
+        <h1>Operatörler, Değişkenler ve Sayaç Mantığı</h1>
+        <p class="hero-text">Bilişim Teknolojileri Dersi - Konu Anlatımı ve Uygulamalar</p>
+        <div class="identity-list">
+          <span><strong>Kurum:</strong> Niyazi Sayın Bilim ve Sanat Merkezi</span>
+          <span><strong>Ders:</strong> Bilişim Teknolojileri Dersi</span>
+          <span><strong>Öğretmen:</strong> Ersin ŞANLI</span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</header>
+
+<main class="container lesson-layout">
+<aside class="toc">
+  <strong>İçindekiler</strong>
+  <a href="#baglanti">1. Önceki derslerle bağlantı</a>
+  <a href="#operator">2. Operatör nedir?</a>
+  <a href="#aritmetik">3. Aritmetik operatörler</a>
+  <a href="#oncelik">4. İşlem önceliği</a>
+  <a href="#karsilastirma">5. Karşılaştırma operatörleri</a>
+  <a href="#mantik">6. Mantıksal operatörler</a>
+  <a href="#atama">7. Atama operatörleri</a>
+  <a href="#esittir">8. = ve == farkı</a>
+  <a href="#degisken">9. Değişken nedir?</a>
+  <a href="#isim-kurallari">10. Değişken isimlendirme kuralları</a>
+  <a href="#iyi-isim">11. İyi değişken isimleri</a>
+  <a href="#sayac">12. Sayaç mantığı</a>
+  <a href="#sayac-toplam">13. Sayaç ve biriktirici farkı</a>
+  <a href="#artis">14. Artış miktarı</a>
+  <a href="#sinir">15. Sınır ve bir eksik/bir fazla hataları</a>
+  <a href="#ornekler">16. Çözümlü örnekler</a>
+  <a href="#python">17. Python'a geçiş</a>
+  <a href="#kaynak">18. Araştırma temeli</a>
+  <a href="#ozet">19. Ders özeti</a>
+</aside>
+
+<article class="lesson-content">
+<section class="lesson-block" id="baglanti">
+<p class="eyebrow">1. Önceki Derslerle Bağlantı</p>
+<h2>Akış şemasında kullandığımız ifadelerin anlamını açalım</h2>
+<p>
+Akış Şemaları dersinde şekillerin içine yalnızca gerekli değişkenleri ve matematiksel ifadeleri yazdık.
+Örneğin <code>sayac = sayac + 1</code>, <code>toplam = toplam + sayac</code>,
+<code>mod = sayac % 2</code> ve <code>sayac &gt; N</code>.
+Bu derste bu ifadeleri oluşturan yapı taşlarını inceliyoruz.
+</p>
+<div class="connection-chain">
+<div><strong>Değişken</strong><span>Veriyi adlandır</span></div><i>+</i>
+<div><strong>Operatör</strong><span>İşlemi tanımla</span></div><i>+</i>
+<div><strong>İfade</strong><span>Hesapla / karşılaştır</span></div><i>→</i>
+<div class="highlight"><strong>Kontrol Akışı</strong><span>Karar ver / tekrar et</span></div>
+</div>
+</section>
+
+<section class="lesson-block" id="operator">
+<p class="eyebrow">2. Temel Kavram</p>
+<h2>Operatör nedir?</h2>
+<p>
+Operatör, bir veya daha fazla değer üzerinde hangi işlemin yapılacağını belirleyen sembol ya da anahtar sözcüktür.
+Operatörün üzerinde çalıştığı değerlere <strong>işlenen (operand)</strong> denir.
+</p>
+<div class="example-box">
+<code class="code-line">toplam = a + b</code>
+<p><strong>a</strong> ve <strong>b</strong> işlenen; <strong>+</strong> aritmetik operatör; <strong>=</strong> atama operatörüdür.</p>
+</div>
+<p>
+Bu derste Python'a geçişi kolaylaştırmak için Python ile uyumlu temel operatör yazımını kullanacağız.
+Programlama dilleri arasında bazı semboller değişebilse de temel düşünme mantığı aynıdır.
+</p>
+</section>
+
+<section class="lesson-block" id="aritmetik">
+<p class="eyebrow">3. Aritmetik Operatörler</p>
+<h2>Sayısal değerler üzerinde hesaplama yap</h2>
+<table class="data-table operator-table">
+<thead><tr><th>Operatör</th><th>Anlam</th><th>Örnek</th><th>Sonuç</th></tr></thead>
+<tbody>
+<tr><td><code>+</code></td><td>Toplama</td><td><code>8 + 3</code></td><td>11</td></tr>
+<tr><td><code>-</code></td><td>Çıkarma</td><td><code>8 - 3</code></td><td>5</td></tr>
+<tr><td><code>*</code></td><td>Çarpma</td><td><code>8 * 3</code></td><td>24</td></tr>
+<tr><td><code>/</code></td><td>Bölme</td><td><code>8 / 3</code></td><td>2.666...</td></tr>
+<tr><td><code>//</code></td><td>Taban bölme</td><td><code>8 // 3</code></td><td>2</td></tr>
+<tr><td><code>%</code></td><td>Kalan (mod)</td><td><code>8 % 3</code></td><td>2</td></tr>
+<tr><td><code>**</code></td><td>Üs alma</td><td><code>2 ** 3</code></td><td>8</td></tr>
+</tbody>
+</table>
+<div class="method-box">
+<h3>% operatörü neden önemlidir?</h3>
+<p>
+Kalan bulma işlemi, bir sayının çift/tek olup olmadığını veya başka bir sayıya tam bölünüp bölünmediğini
+belirlemek için çok kullanılır.
+</p>
+<code class="code-line">mod = sayi % 2</code>
+<p><code>mod = 0</code> ise sayı çifttir; değilse tektir.</p>
+</div>
+
+<div class="demo-box">
+<h3>Aritmetik operatör denemesi</h3>
+<div class="demo-grid">
+<div><label for="arithA"><strong>a</strong></label><input id="arithA" type="number" value="17"></div>
+<div><label for="arithB"><strong>b</strong></label><input id="arithB" type="number" value="5"></div>
+</div>
+<label for="arithOp"><strong>Operatör</strong></label>
+<select id="arithOp">
+<option value="+">+</option><option value="-">-</option><option value="*">*</option>
+<option value="/">/</option><option value="//">//</option><option value="%">%</option><option value="**">**</option>
+</select>
+<button id="arithBtn" class="primary-button" type="button">Hesapla</button>
+<div id="arithResult" class="demo-result">Sonuç burada görünecek.</div>
+</div>
+</section>
+
+<section class="lesson-block" id="oncelik">
+<p class="eyebrow">4. İşlem Önceliği</p>
+<h2>Aynı ifadede birden fazla operatör varsa sıra önemlidir</h2>
+<div class="priority-chain">
+<span>Parantez</span><i>→</i><span>**</span><i>→</i><span>* / // %</span><i>→</i><span>+ -</span><i>→</i>
+<span>Karşılaştırmalar</span><i>→</i><span>not</span><i>→</i><span>and</span><i>→</i><span>or</span>
+</div>
+<div class="example-grid">
+<div class="worked-example">
+<h3>Parantezsiz</h3>
+<code class="code-line">2 + 3 * 4</code>
+<p>Önce çarpma yapılır: 3 × 4 = 12, sonra 2 eklenir. Sonuç 14.</p>
+</div>
+<div class="worked-example">
+<h3>Parantezli</h3>
+<code class="code-line">(2 + 3) * 4</code>
+<p>Önce parantez yapılır: 2 + 3 = 5, sonra 4 ile çarpılır. Sonuç 20.</p>
+</div>
+</div>
+<div class="note-box"><strong>Öneri:</strong> Karmaşık ifadelerde yalnızca önceliğe güvenmek yerine parantez kullanarak niyeti açık hale getir.</div>
+</section>
+
+<section class="lesson-block" id="karsilastirma">
+<p class="eyebrow">5. Karşılaştırma Operatörleri</p>
+<h2>İki değeri karşılaştır ve True / False sonucu üret</h2>
+<table class="data-table operator-table">
+<thead><tr><th>Operatör</th><th>Anlam</th><th>Örnek</th><th>Sonuç</th></tr></thead>
+<tbody>
+<tr><td><code>==</code></td><td>Eşit mi?</td><td><code>5 == 5</code></td><td>True</td></tr>
+<tr><td><code>!=</code></td><td>Eşit değil mi?</td><td><code>5 != 3</code></td><td>True</td></tr>
+<tr><td><code>&gt;</code></td><td>Büyük mü?</td><td><code>8 &gt; 3</code></td><td>True</td></tr>
+<tr><td><code>&lt;</code></td><td>Küçük mü?</td><td><code>8 &lt; 3</code></td><td>False</td></tr>
+<tr><td><code>&gt;=</code></td><td>Büyük veya eşit mi?</td><td><code>50 &gt;= 50</code></td><td>True</td></tr>
+<tr><td><code>&lt;=</code></td><td>Küçük veya eşit mi?</td><td><code>4 &lt;= 9</code></td><td>True</td></tr>
+</tbody>
+</table>
+<p>Akış şemasındaki karar sembolünün içine yazdığımız <code>sayac &gt; N</code> ifadesi bir karşılaştırmadır.</p>
+</section>
+
+<section class="lesson-block" id="mantik">
+<p class="eyebrow">6. Mantıksal Operatörler</p>
+<h2>Birden fazla koşulu birleştir</h2>
+<div class="operator-grid">
+<div class="operator-card"><span class="operator-symbol">and</span><h3>VE</h3><p>Her iki koşul da doğruysa sonuç doğrudur.</p></div>
+<div class="operator-card"><span class="operator-symbol">or</span><h3>VEYA</h3><p>Koşullardan en az biri doğruysa sonuç doğrudur.</p></div>
+<div class="operator-card"><span class="operator-symbol">not</span><h3>DEĞİL</h3><p>Bir koşulun doğruluk değerini tersine çevirir.</p></div>
+</div>
+
+<h3>and doğruluk tablosu</h3>
+<table class="truth-table">
+<thead><tr><th>A</th><th>B</th><th>A and B</th></tr></thead>
+<tbody><tr><td>True</td><td>True</td><td>True</td></tr><tr><td>True</td><td>False</td><td>False</td></tr>
+<tr><td>False</td><td>True</td><td>False</td></tr><tr><td>False</td><td>False</td><td>False</td></tr></tbody>
+</table>
+
+<h3>or doğruluk tablosu</h3>
+<table class="truth-table">
+<thead><tr><th>A</th><th>B</th><th>A or B</th></tr></thead>
+<tbody><tr><td>True</td><td>True</td><td>True</td></tr><tr><td>True</td><td>False</td><td>True</td></tr>
+<tr><td>False</td><td>True</td><td>True</td></tr><tr><td>False</td><td>False</td><td>False</td></tr></tbody>
+</table>
+
+<div class="worked-example">
+<h3>Örnek</h3>
+<code class="code-line">yas &gt;= 10 and yas &lt;= 15</code>
+<p>Yaşın hem 10 veya üzerinde hem de 15 veya altında olması gerekir.</p>
+</div>
+<div class="worked-example">
+<h3>Örnek</h3>
+<code class="code-line">mod3 == 0 and mod5 == 0</code>
+<p>Bir sayının hem 3'e hem 5'e tam bölünebilmesi için iki koşulun da doğru olması gerekir.</p>
+</div>
+
+<div class="demo-box">
+<h3>Mantıksal ifade denemesi</h3>
+<div class="demo-grid">
+<div><label><strong>A</strong></label><select id="logicA"><option value="true">True</option><option value="false">False</option></select></div>
+<div><label><strong>B</strong></label><select id="logicB"><option value="true">True</option><option value="false">False</option></select></div>
+</div>
+<label><strong>Operatör</strong></label>
+<select id="logicOp"><option value="and">and</option><option value="or">or</option></select>
+<button id="logicBtn" class="primary-button" type="button">Değerlendir</button>
+<div id="logicResult" class="demo-result">Sonuç burada görünecek.</div>
+</div>
+</section>
+
+<section class="lesson-block" id="atama">
+<p class="eyebrow">7. Atama Operatörleri</p>
+<h2>Bir değeri değişkene bağla veya mevcut değeri güncelle</h2>
+<table class="data-table operator-table">
+<thead><tr><th>Operatör</th><th>Örnek</th><th>Yaklaşık eşdeğer yazım</th></tr></thead>
+<tbody>
+<tr><td><code>=</code></td><td><code>x = 5</code></td><td>x değerine 5 atanır</td></tr>
+<tr><td><code>+=</code></td><td><code>x += 2</code></td><td><code>x = x + 2</code></td></tr>
+<tr><td><code>-=</code></td><td><code>x -= 2</code></td><td><code>x = x - 2</code></td></tr>
+<tr><td><code>*=</code></td><td><code>x *= 2</code></td><td><code>x = x * 2</code></td></tr>
+<tr><td><code>/=</code></td><td><code>x /= 2</code></td><td><code>x = x / 2</code></td></tr>
+<tr><td><code>//=</code></td><td><code>x //= 2</code></td><td><code>x = x // 2</code></td></tr>
+<tr><td><code>%=</code></td><td><code>x %= 2</code></td><td><code>x = x % 2</code></td></tr>
+<tr><td><code>**=</code></td><td><code>x **= 2</code></td><td><code>x = x ** 2</code></td></tr>
+</tbody>
+</table>
+<div class="note-box">
+<strong>Dikkat:</strong> <code>x += 1</code> ve <code>x = x + 1</code> başlangıç seviyesindeki sayısal sayaç örneklerinde aynı sonucu verir.
+Python'da artırılmış atamanın değerlendirme ayrıntıları bazı veri türlerinde farklı davranışlar gösterebilir; burada sayaç mantığına odaklanıyoruz.
+</div>
+</section>
+
+<section class="lesson-block" id="esittir">
+<p class="eyebrow">8. Çok Önemli Ayrım</p>
+<h2>= atamadır, == karşılaştırmadır</h2>
+<div class="example-grid">
+<div class="worked-example good-example">
+<h3>Atama</h3>
+<code class="code-line">puan = 80</code>
+<p>80 değeri <code>puan</code> adına bağlanır.</p>
+</div>
+<div class="worked-example good-example">
+<h3>Karşılaştırma</h3>
+<code class="code-line">puan == 80</code>
+<p>puan değerinin 80'e eşit olup olmadığı sorgulanır; sonuç True veya False olur.</p>
+</div>
+</div>
+<div class="research-note"><strong>Bu farkı karıştırma:</strong> Algoritma ve akış şemalarında <code>sayac = 0</code> bir atama; <code>sayac &gt; N</code> ise karşılaştırmadır.</div>
+</section>
+
+<section class="lesson-block" id="degisken">
+<p class="eyebrow">9. Değişken</p>
+<h2>Bir değere anlamlı bir ad ver</h2>
+<p>
+Değişken adı, program içinde bir değere ulaşmak için kullandığımız isimdir.
+Python'da basit bir atama ifadesi bir adı bir değere bağlar.
+</p>
+<code class="code-line">ogrenci_sayisi = 24</code>
+<code class="code-line">ortalama = 87.5</code>
+<code class="code-line">sayac = 0</code>
+<code class="code-line">toplam = 0</code>
+<p>
+İyi değişken adları programın ne yaptığını anlamayı kolaylaştırır. <code>x</code> bazı kısa matematiksel örneklerde uygun olabilir;
+ancak uzun bir programda <code>toplam_puan</code> gibi anlamlı bir ad genellikle daha açıklayıcıdır.
+</p>
+</section>
+
+<section class="lesson-block" id="isim-kurallari">
+<p class="eyebrow">10. Değişken İsimlendirme Kuralları</p>
+<h2>Geçerli isim ile iyi isim aynı şey değildir</h2>
+<p>Python'a geçişte kullanacağımız temel isimlendirme kuralları:</p>
+<ul class="flow-rule-list">
+<li>İsim harf veya alt çizgi ile başlayabilir; rakam ilk karakter olamaz.</li>
+<li>İlk karakterden sonra harf, rakam ve alt çizgi kullanılabilir.</li>
+<li>Boşluk ve <code>-</code> gibi karakterler değişken adının parçası olarak kullanılamaz.</li>
+<li><code>if</code>, <code>for</code>, <code>while</code>, <code>class</code>, <code>and</code>, <code>or</code>, <code>not</code> gibi Python anahtar sözcükleri normal değişken adı olamaz.</li>
+<li>Python'da büyük/küçük harf anlamlıdır: <code>puan</code>, <code>Puan</code> ve <code>PUAN</code> farklı isimlerdir.</li>
+<li>Python Unicode tabanlı isimlere izin verir. Ancak bu derste tutarlılık için değişken adlarında ASCII harfleri, rakam ve alt çizgi kullanacağız.</li>
+</ul>
+
+<div class="naming-examples">
+<div class="naming-good">
+<h3>Geçerli ve anlaşılır</h3>
+<code class="code-line">ogrenci_sayisi</code>
+<code class="code-line">toplam_puan</code>
+<code class="code-line">sayac</code>
+<code class="code-line">not_ortalamasi</code>
+<code class="code-line">sayi2</code>
+</div>
+<div class="naming-bad">
+<h3>Bu derste kullanmayacağız</h3>
+<code class="code-line">2sayi</code>
+<code class="code-line">not ortalamasi</code>
+<code class="code-line">sinav-notu</code>
+<code class="code-line">class</code>
+<code class="code-line">ogrenci sayisi</code>
+</div>
+</div>
+
+<div class="demo-box">
+<h3>Değişken adı denetleyici</h3>
+<label for="nameInput"><strong>Bir isim yaz</strong></label>
+<input id="nameInput" type="text" value="ogrenci_sayisi">
+<button id="nameBtn" class="primary-button" type="button">Kontrol Et</button>
+<div id="nameResult" class="validator-result"></div>
+</div>
+</section>
+
+<section class="lesson-block" id="iyi-isim">
+<p class="eyebrow">11. İyi İsimlendirme</p>
+<h2>Okunabilirlik için snake_case kullan</h2>
+<p>
+PEP 8, Python'da fonksiyon ve değişken adları için küçük harfleri ve gerektiğinde kelimeleri alt çizgiyle ayırmayı önerir.
+Bu stile <strong>snake_case</strong> denir.
+</p>
+<table class="data-table naming-table">
+<thead><tr><th>Zayıf</th><th>Daha açıklayıcı</th></tr></thead>
+<tbody>
+<tr><td><code>s</code></td><td><code>ogrenci_sayisi</code></td></tr>
+<tr><td><code>t</code></td><td><code>toplam_puan</code></td></tr>
+<tr><td><code>ort</code></td><td><code>not_ortalamasi</code></td></tr>
+<tr><td><code>x1</code></td><td><code>birinci_sayi</code></td></tr>
+</tbody>
+</table>
+<div class="note-box">
+<strong>Tek harf her zaman yanlış değildir.</strong> Kısa matematiksel formüllerde <code>a</code>, <code>b</code>, <code>x</code> kullanılabilir.
+Ancak değişkenin görevi önemliyse anlamlı bir isim tercih edilir.
+</div>
+</section>
+
+<section class="lesson-block" id="sayac">
+<p class="eyebrow">12. Sayaç Mantığı</p>
+<h2>Bir işlemin kaç kez yapıldığını veya hangi sıradaki değerde olduğumuzu takip et</h2>
+<p>
+Sayaç, belirli bir başlangıç değerinden hareket eden ve her tekrarda belirli miktarda değişen değişkendir.
+</p>
+<div class="counter-flow">
+<span>sayac = 0</span><i>→</i><span>koşulu kontrol et</span><i>→</i><span>işlemi yap</span><i>→</i><span>sayac = sayac + 1</span><i>→</i><span>koşula dön</span>
+</div>
+<h3>Sayaçta dört temel soru</h3>
+<div class="criteria-grid">
+<div><strong>Başlangıç</strong><p>Sayaç hangi değerle başlayacak?</p></div>
+<div><strong>Koşul</strong><p>Hangi değere kadar devam edecek?</p></div>
+<div><strong>Değişim</strong><p>Her turda kaç artacak veya azalacak?</p></div>
+<div><strong>Kullanım</strong><p>Sayaç yalnızca sayacak mı, yoksa başka işlemde de kullanılacak mı?</p></div>
+</div>
+</section>
+
+<section class="lesson-block" id="sayac-toplam">
+<p class="eyebrow">13. Sayaç ve Biriktirici</p>
+<h2>sayac ile toplam aynı görevde değildir</h2>
+<table class="data-table counter-table">
+<thead><tr><th>Değişken</th><th>Görev</th><th>Tipik güncelleme</th></tr></thead>
+<tbody>
+<tr><td><code>sayac</code></td><td>Kaçıncı adımda olduğumuzu veya sıradaki değeri izler</td><td><code>sayac = sayac + 1</code></td></tr>
+<tr><td><code>toplam</code></td><td>Değerleri biriktirir</td><td><code>toplam = toplam + sayac</code></td></tr>
+</tbody>
+</table>
+<div class="worked-example">
+<h3>1'den N'e kadar toplam</h3>
+<code class="code-line">sayac = 0</code>
+<code class="code-line">toplam = 0</code>
+<p>Her turda önce sayaç ilerler, sonra yeni sayaç değeri toplam değişkenine eklenir.</p>
+</div>
+</section>
+
+<section class="lesson-block" id="artis">
+<p class="eyebrow">14. Artış Miktarı</p>
+<h2>Sayaç her zaman 1 artmak zorunda değildir</h2>
+<div class="operator-grid">
+<div class="operator-card"><h3>1'er artış</h3><code class="code-line">sayac += 1</code><p>1, 2, 3, 4, ...</p></div>
+<div class="operator-card"><h3>2'şer artış</h3><code class="code-line">sayac += 2</code><p>1, 3, 5, 7, ... veya 0, 2, 4, 6, ...</p></div>
+<div class="operator-card"><h3>1'er azalış</h3><code class="code-line">sayac -= 1</code><p>N, N-1, N-2, ...</p></div>
+<div class="operator-card"><h3>5'er artış</h3><code class="code-line">sayac += 5</code><p>0, 5, 10, 15, ...</p></div>
+</div>
+<p>
+Tek sayıları doğrudan dolaşmak için <code>sayac = 1</code> ile başlayıp <code>sayac += 2</code>;
+çift sayılar için <code>sayac = 0</code> veya <code>sayac = 2</code> ile başlayıp 2'şer artırmak mümkündür.
+</p>
+</section>
+
+<section class="lesson-block" id="sinir">
+<p class="eyebrow">15. Sınır Değerleri</p>
+<h2>Bir eksik / bir fazla hatalarına dikkat et</h2>
+<p>
+Sayaç problemlerindeki en yaygın hatalardan biri başlangıç veya bitiş sınırını yanlış seçmektir.
+Örneğin 1'den N'e kadar sayıları <strong>N dahil</strong> işlemek istiyorsak koşul buna göre kurulmalıdır.
+</p>
+<div class="example-grid">
+<div class="worked-example good-example">
+<h3>N dahil</h3>
+<code class="code-line">sayac &lt;= N</code>
+<p>Sayaç N değerindeyken işlem yapılmaya devam eder.</p>
+</div>
+<div class="worked-example">
+<h3>N hariç</h3>
+<code class="code-line">sayac &lt; N</code>
+<p>Sayaç N olduğunda koşul artık yanlış olur.</p>
+</div>
+</div>
+<div class="note-box"><strong>Test et:</strong> N = 1, N = 2 gibi küçük sınır değerleriyle algoritmayı elle izlemek hatayı erken yakalamayı kolaylaştırır.</div>
+</section>
+
+<section class="lesson-block" id="ornekler">
+<p class="eyebrow">16. Çözümlü Örnekler</p>
+<h2>Operatör, değişken ve sayaç birlikte</h2>
+
+<div class="worked-example">
+<h3>Örnek 1: Çift sayı kontrolü</h3>
+<code class="code-line">mod = sayi % 2</code>
+<code class="code-line">mod == 0</code>
+<p><code>%</code> aritmetik operatörü kalan bulur; <code>==</code> karşılaştırma yapar.</p>
+</div>
+
+<div class="worked-example">
+<h3>Örnek 2: Başarı koşulu</h3>
+<code class="code-line">ortalama &gt;= 50</code>
+<p><code>&gt;=</code> karşılaştırma operatörüdür ve True/False sonucu üretir.</p>
+</div>
+
+<div class="worked-example">
+<h3>Örnek 3: Belirli aralık</h3>
+<code class="code-line">yas &gt;= 10 and yas &lt;= 15</code>
+<p>İki karşılaştırma <code>and</code> ile birleştirilmiştir.</p>
+</div>
+
+<div class="worked-example">
+<h3>Örnek 4: 1'den N'e toplam</h3>
+<code class="code-line">sayac = 0</code>
+<code class="code-line">toplam = 0</code>
+<code class="code-line">sayac += 1</code>
+<code class="code-line">toplam += sayac</code>
+<p>Burada sayaç sırayı izler; toplam ise değerleri biriktirir.</p>
+</div>
+
+<div class="worked-example">
+<h3>Örnek 5: Tek sayıların kısa çözümü</h3>
+<code class="code-line">sayac = 1</code>
+<code class="code-line">sayac += 2</code>
+<p>Sayaç doğrudan tek değerlerde ilerlediği için ayrıca <code>% 2</code> kontrolü yapmak gerekmez.</p>
+</div>
+
+<div class="demo-box">
+<h3>Sayaç simülatörü</h3>
+<div class="demo-grid">
+<div><label for="countStart"><strong>Başlangıç</strong></label><input id="countStart" type="number" value="1"></div>
+<div><label for="countEnd"><strong>Bitiş</strong></label><input id="countEnd" type="number" value="10"></div>
+<div><label for="countStep"><strong>Adım</strong></label><input id="countStep" type="number" value="2"></div>
+<div><label for="countMode"><strong>Sınır</strong></label><select id="countMode"><option value="inclusive">Bitiş dahil</option><option value="exclusive">Bitiş hariç</option></select></div>
+</div>
+<button id="countBtn" class="primary-button" type="button">Sayacı Çalıştır</button>
+<div id="countResult" class="demo-result">Sayaç değerleri burada görünecek.</div>
+</div>
+</section>
+
+<section class="lesson-block" id="python">
+<p class="eyebrow">17. Python'a Geçiş</p>
+<h2>Artık Python kodlarını okumaya hazırsın</h2>
+<p>
+Bu dersteki gösterim doğrudan Python'da göreceğimiz yapılara hazırlanır:
+</p>
+<code class="code-line">toplam = a + b</code>
+<code class="code-line">ortalama = toplam / 2</code>
+<code class="code-line">if ortalama &gt;= 50:</code>
+<code class="code-line">sayac += 1</code>
+<code class="code-line">if sayac &gt; N:</code>
+<p>
+Böylece Problem Çözme → Algoritma → Akış Şemaları → Operatör/Değişken/Sayaç zinciri tamamlanır ve Python derslerine geçiş daha anlamlı hale gelir.
+</p>
+</section>
+
+<section class="lesson-block" id="kaynak">
+<p class="eyebrow">18. Araştırma Temeli</p>
+<h2>Bu derste kullandığımız Python uyumlu yaklaşım</h2>
+<p>
+Operatörler ve öncelik sırası Python dil başvurusu; atama ve artırılmış atama yapıları Python'ın simple statements belgeleri;
+isimlendirme kuralları Python lexical analysis belgeleri; okunabilir değişken adı önerileri ise PEP 8 esas alınarak hazırlanmıştır.
+</p>
+<a class="button-link" href="kaynaklar.html">Araştırma Kaynaklarını Gör</a>
+</section>
+
+<section class="lesson-block" id="ozet">
+<p class="eyebrow">19. Ders Özeti</p>
+<h2>Kontrol listesi</h2>
+<div class="check-panel">
+<label><input type="checkbox"> Aritmetik operatörleri ayırt edebiliyorum.</label>
+<label><input type="checkbox"> Karşılaştırma operatörlerinin True/False ürettiğini biliyorum.</label>
+<label><input type="checkbox"> and, or ve not operatörlerini kullanabiliyorum.</label>
+<label><input type="checkbox"> = ile == arasındaki farkı açıklayabiliyorum.</label>
+<label><input type="checkbox"> += gibi artırılmış atama operatörlerini okuyabiliyorum.</label>
+<label><input type="checkbox"> Geçerli ve iyi değişken isimlerini ayırt edebiliyorum.</label>
+<label><input type="checkbox"> Sayaç ile biriktirici değişkenin farkını biliyorum.</label>
+<label><input type="checkbox"> Başlangıç, bitiş ve artış değerine göre sayaç tasarlayabiliyorum.</label>
+</div>
+<div class="next-card">
+<h3>Uygulama zamanı</h3>
+<p>Operatörler, değişken isimlendirme ve sayaç mantığı uygulamalarını tamamla.</p>
+<a class="button-link" href="uygulamalar.html">Uygulama Merkezine Geç</a>
+</div>
+</section>
+</article>
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>Niyazi Sayın Bilim ve Sanat Merkezi</span>
+    <span>Bilişim Teknolojileri Dersi - Öğretmen: Ersin ŞANLI</span>
+  </div>
+</footer>
+
+<script src="assets/konu.js"></script>
+</body>
+</html>
