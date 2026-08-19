@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1386" viewBox="0 0 1080 1386">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#42546f"/></marker></defs>
+<rect width="1080" height="1386" fill="#fff"/>
+<path d="M500,79.0 L500,144.0" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<path d="M500,212.0 L500,282.0" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<path d="M500,350.0 L500,401.5" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<path d="M500,506.5 L500,595.0" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<text x="512" y="550.75" text-anchor="middle" font-size="14" font-weight="700" fill="#285dcc">Evet</text>
+<path d="M675.0,454 L988,454 L988,680 L500,680 L500,714.5" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<text x="831.5" y="446" text-anchor="middle" font-size="14" font-weight="700" fill="#285dcc">Hayır</text>
+<path d="M500,663.0 L250,663.0 L250,767 L325.0,767" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<path d="M500,819.5 L500,908.0" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<text x="512" y="863.75" text-anchor="middle" font-size="14" font-weight="700" fill="#285dcc">Evet</text>
+<path d="M675.0,767 L968,767 L968,1080 L660.0,1080" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<text x="821.5" y="759" text-anchor="middle" font-size="14" font-weight="700" fill="#285dcc">Hayır</text>
+<path d="M500,976.0 L500,1046.0" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<path d="M500,1114.0 L500,1189.0" fill="none" stroke="#42546f" stroke-width="2.25" marker-end="url(#arrow)"/>
+<rect x="375.0" y="21.0" width="250" height="58" rx="29.0" fill="#eaf1ff" stroke="#285dcc" stroke-width="2.4"/>
+<text x="500" y="55.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">Başla</text>
+<polygon points="374.0,144.0 660.0,144.0 626.0,212.0 340.0,212.0" fill="#eef8f3" stroke="#147a4b" stroke-width="2.4"/>
+<text x="500" y="183.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">a, b, c</text>
+<rect x="340.0" y="282.0" width="320" height="68" rx="5" fill="#f8fbff" stroke="#285dcc" stroke-width="2.3"/>
+<text x="500" y="321.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">enBuyuk = a</text>
+<polygon points="500,401.5 675.0,454 500,506.5 325.0,454" fill="#fff7df" stroke="#b17a10" stroke-width="2.4"/>
+<text x="500" y="459.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">b &gt; enBuyuk</text>
+<rect x="340.0" y="595.0" width="320" height="68" rx="5" fill="#f8fbff" stroke="#285dcc" stroke-width="2.3"/>
+<text x="500" y="634.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">enBuyuk = b</text>
+<polygon points="500,714.5 675.0,767 500,819.5 325.0,767" fill="#fff7df" stroke="#b17a10" stroke-width="2.4"/>
+<text x="500" y="772.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">c &gt; enBuyuk</text>
+<rect x="340.0" y="908.0" width="320" height="68" rx="5" fill="#f8fbff" stroke="#285dcc" stroke-width="2.3"/>
+<text x="500" y="947.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">enBuyuk = c</text>
+<path d="M340.0,1046.0 H660.0 V1102.0 C600.0,1092.0 415.0,1128.0 340.0,1112.0 Z" fill="#dff1fb" stroke="#2b7ca7" stroke-width="2.4"/>
+<text x="500" y="1085.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">enBuyuk</text>
+<rect x="375.0" y="1189.0" width="250" height="58" rx="29.0" fill="#eaf1ff" stroke="#285dcc" stroke-width="2.4"/>
+<text x="500" y="1223.0" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" fill="#172033">Bitir</text>
+</svg>

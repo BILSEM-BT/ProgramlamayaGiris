@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Akış Şemaları Konu Anlatımı</title><link rel="stylesheet" href="assets/style.css"></head>
+<body>
+<header class="sub-header">
+  <div class="container header-brand">
+    <img class="sub-logo" src="assets/nsb-logo.png" alt="Niyazi Sayın Bilim ve Sanat Merkezi logosu">
+    <div>
+      <a class="back-link" href="index.html">Ders Ana Sayfası</a>
+      <p class="eyebrow light">Niyazi Sayın Bilim ve Sanat Merkezi</p>
+      <h1>Akış Şemaları</h1>
+      <p class="hero-text">Bilişim Teknolojileri Dersi - Konu Anlatımı ve Sayısal Örnekler</p>
+      <div class="identity-list">
+        <span><strong>Kurum:</strong> Niyazi Sayın Bilim ve Sanat Merkezi</span>
+        <span><strong>Ders:</strong> Bilişim Teknolojileri Dersi</span>
+        <span><strong>Öğretmen:</strong> Ersin ŞANLI</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container lesson-layout">
+<aside class="toc">
+<strong>İçindekiler</strong>
+<a href="#baglanti">1. Algoritmadan akış şemasına</a>
+<a href="#semboller">2. Temel semboller</a>
+<a href="#metin">3. Şekil içindeki ifadeler</a>
+<a href="#karar">4. Koşul ve dallanma</a>
+<a href="#tekrar">5. Tekrar ve geri dönüş</a>
+<a href="#sonluluk">6. Başla, Bitir ve sonluluk</a>
+<a href="#donusum">7. Dönüştürme yöntemi</a>
+<a href="#ornekler">8. Sayısal akış şemaları</a>
+<a href="#karsilastirma">9. Farklı çözüm yolları</a>
+<a href="#hatalar">10. Yaygın hatalar</a>
+<a href="#ozet">11. Ders özeti</a>
+</aside>
+
+<article class="lesson-content">
+<section class="lesson-block" id="baglanti">
+<p class="eyebrow">1. Algoritmadan Akış Şemasına</p>
+<h2>Algoritmanın kontrol akışını sembollerle göster</h2>
+<p>
+Algoritma dersinde yazdığımız sayısal çözümler bu derste aynı mantık korunarak akış şemasına dönüştürülür.
+Adım numaraları şemanın içine taşınmaz. Şekiller yalnızca gerekli değişkenleri, matematiksel işlemleri,
+koşulları ve sonuçları içerir.
+</p>
+<div class="research-note">
+<strong>Ders standardı:</strong>
+<p>Şekillerin içinde “gir”, “ata”, “işlemini yap”, “ekrana yaz”, “A5'e dön” gibi tamamlayıcı cümleler kullanılmaz. Yönlendirme oklarla gösterilir.</p>
+</div>
+</section>
+
+<section class="lesson-block" id="semboller">
+<p class="eyebrow">2. Temel Semboller</p>
+<h2>Giriş ve çıktı için farklı semboller kullanıyoruz</h2>
+<div class="flow-symbol-grid">
+<div class="symbol-card"><div class="symbol-demo"><svg class="symbol-svg" viewBox="0 0 220 90"><rect x="25" y="22" width="170" height="46" rx="23" fill="#eaf1ff" stroke="#285dcc" stroke-width="2.5"/><text x="110" y="50" text-anchor="middle" font-size="15">Başla / Bitir</text></svg></div><h3>Başla / Bitir</h3><p>Akışın başlangıç ve bitiş noktaları.</p></div>
+<div class="symbol-card"><div class="symbol-demo"><svg class="symbol-svg" viewBox="0 0 220 90"><rect x="25" y="20" width="170" height="50" rx="4" fill="#f8fbff" stroke="#285dcc" stroke-width="2.5"/><text x="110" y="50" text-anchor="middle" font-size="15">x = x + 1</text></svg></div><h3>İşlem</h3><p>Matematiksel işlem ve değişken ataması.</p></div>
+<div class="symbol-card"><div class="symbol-demo"><svg class="symbol-svg" viewBox="0 0 220 90"><polygon points="48,20 198,20 172,70 22,70" fill="#eef8f3" stroke="#147a4b" stroke-width="2.5"/><text x="110" y="50" text-anchor="middle" font-size="15">N</text></svg></div><h3>Giriş</h3><p>Paralelkenar yalnızca giriş için kullanılır.</p></div>
+<div class="symbol-card"><div class="symbol-demo"><svg class="symbol-svg" viewBox="0 0 220 90"><path d="M25,18 H195 V62 C150,53 93,82 25,66 Z" fill="#dff1fb" stroke="#2b7ca7" stroke-width="2.5"/><text x="110" y="47" text-anchor="middle" font-size="15">toplam</text></svg></div><h3>Çıktı</h3><p>Sonuç veya değişkenin dışarı verilmesi için ayrı çıktı sembolü kullanılır.</p></div>
+<div class="symbol-card"><div class="symbol-demo"><svg class="symbol-svg" viewBox="0 0 220 90"><polygon points="110,10 194,45 110,80 26,45" fill="#fff7df" stroke="#b17a10" stroke-width="2.5"/><text x="110" y="50" text-anchor="middle" font-size="14">sayac &gt; N</text></svg></div><h3>Karar</h3><p>Koşulun değerlendirildiği ve akışın dallandığı nokta.</p></div>
+<div class="symbol-card"><div class="symbol-demo"><svg class="symbol-svg" viewBox="0 0 220 90"><defs><marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#42546f"/></marker></defs><path d="M40,45 L180,45" stroke="#42546f" stroke-width="3" marker-end="url(#arr)"/></svg></div><h3>Akış Yönü</h3><p>İşlemler arasındaki geçiş ve geri dönüşler oklarla gösterilir.</p></div>
+</div>
+<div class="output-symbol-note"><strong>Not:</strong> Bu derste bağlayıcı sembolü kullanılmayacaktır. Çıktı için dalgalı alt kenara sahip çıktı sembolü kullanılacaktır.</div>
+</section>
+
+<section class="lesson-block" id="metin">
+<p class="eyebrow">3. Şekil İçindeki İfadeler</p>
+<h2>Kısa, matematiksel ve doğrudan yaz</h2>
+<table class="data-table">
+<thead><tr><th>Kullanılmayacak ifade</th><th>Şeklin içinde kullanılacak ifade</th></tr></thead>
+<tbody>
+<tr><td>N sayısını gir</td><td><strong>N</strong></td></tr>
+<tr><td>toplam değişkenine 0 ata</td><td><strong>toplam = 0</strong></td></tr>
+<tr><td>sayac değerini 1 artır</td><td><strong>sayac = sayac + 1</strong></td></tr>
+<tr><td>toplam = toplam + sayac işlemini yap</td><td><strong>toplam = toplam + sayac</strong></td></tr>
+<tr><td>toplam değişkenini ekrana yaz</td><td><strong>toplam</strong></td></tr>
+<tr><td>Eğer sayac &gt; N ise...</td><td><strong>sayac &gt; N</strong></td></tr>
+</tbody>
+</table>
+<p>Geri dönüş veya başka bir adıma geçiş şeklin içine yazılmaz; ilgili ok doğrudan hedef sembole bağlanır.</p>
+</section>
+
+<section class="lesson-block" id="karar">
+<p class="eyebrow">4. Koşul ve Dallanma</p>
+<h2>Karar sembolünde yalnızca koşul bulunur</h2>
+<div class="worked-example">
+<p><strong>Karar sembolü:</strong> <code>sayac &gt; N</code></p>
+<p><strong>Evet oku:</strong> Sonuç veya Bitir yönüne gider.</p>
+<p><strong>Hayır oku:</strong> Hesaplama veya tekrar adımına gider.</p>
+</div>
+<p>“Evetse şu adıma git” veya “Hayırsa A5'e dön” ifadeleri karar sembolünün içine yazılmaz. Dallanma, Evet/Hayır etiketli oklarla gösterilir.</p>
+<div class="method-box">
+<h3>Karar sembolünde ok bağlantı kuralı</h3>
+<p>Karar sembolünün aynı köşesi hem giriş hem çıkış için kullanılmaz. Her köşede en fazla bir akış bağlantısı bulunur.</p>
+<p>Bu dersteki yerleşim standardında ana akış mümkün olduğunda <strong>üst köşeden girer</strong>; kararın iki çıkışı <strong>sağ ve alt köşeden</strong> ayrılır. Döngü veya birleşen ikinci bir giriş gerekiyorsa boş olan <strong>sol köşe</strong> kullanılır.</p>
+</div>
+</section>
+
+<section class="lesson-block" id="tekrar">
+<p class="eyebrow">5. Tekrar ve Geri Dönüş</p>
+<h2>Geri dönüş metinle değil okla gösterilir</h2>
+<p>
+Örneğin <code>sayac = sayac + 1</code> işleminden sonra koşul tekrar kontrol edilecekse,
+işlem dikdörtgeninden karar sembolüne geri dönen bir ok çizilir. Dikdörtgenin içinde yalnızca
+<code>sayac = sayac + 1</code> ifadesi yer alır.
+</p>
+</section>
+
+<section class="lesson-block" id="sonluluk">
+<p class="eyebrow">6. Başla, Bitir ve Sonluluk</p>
+<h2>Her akış bir başlangıçtan bir bitişe ulaşmalıdır</h2>
+<p>
+Bu derste çizilen akış şemaları Başla ile başlar ve uygun koşullarda Bitir'e ulaşır.
+Döngülü yapılarda sayaç veya koşul değişkeninin değişmesi, tekrarın bir noktada sona ermesini sağlamalıdır.
+</p>
+</section>
+
+<section class="lesson-block" id="donusum">
+<p class="eyebrow">7. Dönüştürme Yöntemi</p>
+<h2>Algoritmayı sade görsel ifadeye dönüştür</h2>
+<div class="step-grid">
+<div class="step-card"><span>1</span><h3>Başla / Bitir</h3><p>Terminal sembollerini yerleştir.</p></div>
+<div class="step-card"><span>2</span><h3>Girdiler</h3><p>Yalnızca değişken adını paralelkenara yaz.</p></div>
+<div class="step-card"><span>3</span><h3>İşlemler</h3><p>Dikdörtgene yalnızca matematiksel ifadeyi yaz.</p></div>
+<div class="step-card"><span>4</span><h3>Koşullar</h3><p>Karar sembolüne yalnızca koşulu yaz.</p></div>
+<div class="step-card"><span>5</span><h3>Çıktılar</h3><p>Çıktı sembolüne yalnızca sonuç değişkenini veya sonucu yaz.</p></div>
+<div class="step-card"><span>6</span><h3>Oklar</h3><p>Sıra, dallanma ve geri dönüşleri oklarla kur.</p></div>
+</div>
+</section>
+
+<section class="lesson-block" id="ornekler">
+<p class="eyebrow">8. Sayısal Akış Şemaları</p>
+<h2>Algoritma dersindeki sayısal örneklerin görsel karşılıkları</h2>
+<p>Gündelik yaşam algoritmalarının akış şemaları bu bölümde kullanılmamaktadır. Aşağıdaki örneklerin tamamı sayısal ve matematiksel problemlerdir.</p>
+
+<details class="flow-example" open>
+  <summary>Dikdörtgenin alanını hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/01-dikdortgen-alani.svg" alt="Dikdörtgenin alanını hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen bir sayının pozitif mi negatif mi olduğunu belirleyen algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/02-pozitif-negatif.svg" alt="Girilen bir sayının pozitif mi negatif mi olduğunu belirleyen algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen iki sayıdan küçük olanı belirleyen algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/03-iki-sayidan-kucuk.svg" alt="Girilen iki sayıdan küçük olanı belirleyen algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>1 ile 1000 arasındaki sayıları ekrana yazdıran algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/04-1-1000-sayilari.svg" alt="1 ile 1000 arasındaki sayıları ekrana yazdıran algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen iki sayının ortalamasını hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/05-iki-sayi-ortalama.svg" alt="Girilen iki sayının ortalamasını hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen iki sayıdan büyük olanı bulan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/06-iki-sayidan-buyuk.svg" alt="Girilen iki sayıdan büyük olanı bulan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen sayının çift mi tek mi olduğunu bulan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/07-cift-tek.svg" alt="Girilen sayının çift mi tek mi olduğunu bulan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen üç sayının ortalamasını hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/08-uc-sayi-ortalama.svg" alt="Girilen üç sayının ortalamasını hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Dikdörtgenin alanını ve çevresini hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/09-dikdortgen-alan-cevre.svg" alt="Dikdörtgenin alanını ve çevresini hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>1&#x27;den N&#x27;e kadar olan sayıları ekrana yazdıran algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/10-1-n-yazdir.svg" alt="1&#x27;den N&#x27;e kadar olan sayıları ekrana yazdıran algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>1&#x27;den N&#x27;e kadar olan tamsayıların toplamını hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/11-1-n-toplam.svg" alt="1&#x27;den N&#x27;e kadar olan tamsayıların toplamını hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>1&#x27;den N&#x27;e kadar olan tek tamsayıların toplamını hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/12-tek-toplam-mod.svg" alt="1&#x27;den N&#x27;e kadar olan tek tamsayıların toplamını hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Tek tamsayıların toplamı - kısa çözüm</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/13-tek-toplam-kisa.svg" alt="Tek tamsayıların toplamı - kısa çözüm akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>1&#x27;den N&#x27;e kadar olan çift tamsayıların toplamını hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/14-cift-toplam-mod.svg" alt="1&#x27;den N&#x27;e kadar olan çift tamsayıların toplamını hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Çift tamsayıların toplamı - kısa çözüm</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/15-cift-toplam-kisa.svg" alt="Çift tamsayıların toplamı - kısa çözüm akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen N sayısının faktöriyelini hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/16-faktoriyel.svg" alt="Girilen N sayısının faktöriyelini hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen sayının 3&#x27;e ve 5&#x27;e tam bölünüp bölünmediğini bulan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/17-3-5-bolunme.svg" alt="Girilen sayının 3&#x27;e ve 5&#x27;e tam bölünüp bölünmediğini bulan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen üç sayıdan en büyük olanı bulan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/18-uc-sayi-en-buyuk.svg" alt="Girilen üç sayıdan en büyük olanı bulan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>N sayısından 1&#x27;e kadar sayıları geriye doğru yazdıran algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/19-n-1-geriye.svg" alt="N sayısından 1&#x27;e kadar sayıları geriye doğru yazdıran algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen sayının karesini ve küpünü hesaplayan algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/20-kare-kup.svg" alt="Girilen sayının karesini ve küpünü hesaplayan algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>Girilen not ortalamasına göre başarı durumunu belirleyen algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/21-basari-durumu.svg" alt="Girilen not ortalamasına göre başarı durumunu belirleyen algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+
+<details class="flow-example">
+  <summary>N sayısının çarpım tablosunu 1&#x27;den 10&#x27;a kadar yazdıran algoritma</summary>
+  <div class="flow-example-body" style="grid-template-columns:1fr">
+    <div class="diagram-panel">
+      <div class="flow-svg-wrap">
+        <img src="assets/flows/22-carpim-tablosu.svg" alt="N sayısının çarpım tablosunu 1&#x27;den 10&#x27;a kadar yazdıran algoritma akış şeması">
+      </div>
+    </div>
+  </div>
+</details>
+
+</section>
+
+<section class="lesson-block" id="karsilastirma">
+<p class="eyebrow">9. Farklı Çözüm Yolları</p>
+<h2>Uzun ve kısa çözüm akışlarını karşılaştır</h2>
+<p>Tek ve çift sayıların toplamında mod kontrollü çözüm ile sayacı 2'şer artıran kısa çözüm aynı sonucu farklı akışlarla üretir.</p>
+<h3>Tek sayıların toplamı</h3>
+<div class="compare-flow-grid">
+<div class="compare-card"><strong>Mod kontrollü çözüm</strong><img src="assets/flows/12-tek-toplam-mod.svg" alt="Tek sayılar mod kontrollü akış şeması"></div>
+<div class="compare-card"><strong>Kısa çözüm</strong><img src="assets/flows/13-tek-toplam-kisa.svg" alt="Tek sayılar kısa çözüm akış şeması"></div>
+</div>
+<h3>Çift sayıların toplamı</h3>
+<div class="compare-flow-grid">
+<div class="compare-card"><strong>Mod kontrollü çözüm</strong><img src="assets/flows/14-cift-toplam-mod.svg" alt="Çift sayılar mod kontrollü akış şeması"></div>
+<div class="compare-card"><strong>Kısa çözüm</strong><img src="assets/flows/15-cift-toplam-kisa.svg" alt="Çift sayılar kısa çözüm akış şeması"></div>
+</div>
+</section>
+
+<section class="lesson-block" id="hatalar">
+<p class="eyebrow">10. Yaygın Hatalar</p>
+<h2>Bu derste kaçınacağımız hatalar</h2>
+<ul class="warning-list">
+<li>Giriş ve çıktı için aynı paralelkenarı kullanmak.</li>
+<li>Şeklin içine A1, A2 gibi adım numaraları yazmak.</li>
+<li>Dikdörtgene “ata”, “işlemini yap” gibi açıklamalar eklemek.</li>
+<li>Giriş sembolüne “N sayısını gir” yazmak yerine yalnızca N yazmamak.</li>
+<li>Karar sembolünün içine yönlendirme cümleleri yazmak.</li>
+<li>Geri dönüşü metinle anlatıp okla göstermemek.</li>
+<li>Çıktı için giriş sembolünü kullanmak.</li>
+</ul>
+</section>
+
+<section class="lesson-block" id="ozet">
+<p class="eyebrow">11. Ders Özeti</p>
+<h2>Kontrol listesi</h2>
+<div class="check-panel">
+<label><input type="checkbox"> Paralelkenarı yalnızca giriş için kullanıyorum.</label>
+<label><input type="checkbox"> Çıktı için ayrı çıktı sembolünü kullanıyorum.</label>
+<label><input type="checkbox"> Dikdörtgende yalnızca matematiksel işlem veya atama var.</label>
+<label><input type="checkbox"> Karar sembolünde yalnızca koşul var.</label>
+<label><input type="checkbox"> Adım numaralarını şekillerin içine yazmıyorum.</label>
+<label><input type="checkbox"> Dallanma ve geri dönüşleri oklarla gösteriyorum.</label>
+<label><input type="checkbox"> Bütün olası akışların Bitir'e ulaşmasını kontrol ediyorum.</label>
+</div>
+<div class="next-card">
+<h3>Şimdi uygulama zamanı</h3>
+<p>Semboller, sayısal akış okuma ve algoritmadan akış şemasına dönüşüm sorularını tamamla.</p>
+<a class="button-link" href="uygulamalar.html">Uygulama Merkezine Geç</a>
+</div>
+</section>
+</article>
+</main>
+<footer class="footer"><div class="container footer-row"><span>Niyazi Sayın Bilim ve Sanat Merkezi</span><span>Bilişim Teknolojileri Dersi - Öğretmen: Ersin ŞANLI</span></div></footer>
+</body></html>
